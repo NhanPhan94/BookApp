@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddingBook">
+
+    <TextView
+        android:id="@+id/txtAddingbook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="@string/txtAddingbook"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtBookTitle"
+        android:layout_width="296dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="22dp"
+        android:ems="10"
+        android:hint="@string/txtBooktitle"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtAuthor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAddingbook"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/txtPulication"
+        android:layout_width="294dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="46dp"
+        android:ems="10"
+        android:hint="@string/txtPulication"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/cbShare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPublish"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/txtAuthor"
+        android:layout_width="293dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="@string/txtAuthor"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtPublish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBookTitle"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/txtPublish"
+        android:layout_width="292dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginEnd="48dp"
+        android:ems="10"
+        android:hint="@string/txtPublisher"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtPulication"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAuthor"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <CheckBox
+        android:id="@+id/cbShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="94dp"
+        android:layout_marginEnd="234dp"
+        android:text="@string/lblShare"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/cbGiveaway"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPulication" />
+
+    <CheckBox
+        android:id="@+id/cbRent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="94dp"
+        android:layout_marginEnd="244dp"
+        android:layout_marginBottom="18dp"
+        android:text="@string/lblRent"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbGiveaway" />
+
+    <CheckBox
+        android:id="@+id/cbGiveaway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="94dp"
+        android:layout_marginEnd="189dp"
+        android:text="@string/lblgiveaway"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/cbRent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbShare" />
+
+    <Button
+        android:id="@+id/btnCancelAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginBottom="34dp"
+        android:text="@string/btnCancel"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbRent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="114dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="163dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="34dp"
+        android:text="@string/btnAddBook"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnCancelAdd"
+        app:layout_constraintTop_toBottomOf="@+id/txtPulication" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

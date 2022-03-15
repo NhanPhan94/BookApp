@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">GroupProject</string>
+    <string name="txtRegister">Get early access</string>
+    <string name="txtLaunch">As soon as we launch we will let you know</string>
+    <string name="hintName">First Name and Last Name</string>
+    <string name="hintEmail">Your email</string>
+    <string name="hintPhone">Your phone number</string>
+    <string name="hintInterest">Enter your interest</string>
+    <string name="qsWhere">Where did you find out about us?</string>
+    <string-array name="txtWhere">
+        <item>Google</item>
+        <item>Facebook</item>
+        <item>Telegram</item>
+        <item>Other</item>
+    </string-array>
+    <string name="txtConfirm">By clicking on the "send" button,
+        you consent to the processing of your personal data in accordance with
+        our personal data processing policy</string>
+    <string name="btnSend">Send</string>
+    <string name="txtLogin">Login</string>
+    <string name="txtPassword">Password</string>
+    <string name="btnCancel">Cancel</string>
+    <string name="btnLogin">Login</string>
+    <string name="btnAdd">Add/Update a book</string>
+    <string name="btnBorrow">Borrow a book</string>
+    <string name="btnReading">Reading tracker</string>
+    <string name="txtAddingbook">Adding Book</string>
+    <string name="txtBooktitle">Book Title</string>
+    <string name="txtAuthor">Author name</string>
+    <string name="txtPublisher">Publisher name</string>
+    <string name="txtPulication">Pulication year</string>
+    <string name="lblShare">Share</string>
+    <string name="lblgiveaway">Give a way</string>
+    <string name="lblRent">Rent</string>
+    <string name="btnAddBook">Add</string>
+    <string name="txtUpdateBook">Update a Book</string>
+    <string name="txtBookName">Book name</string>
+    <string name="lblBorrow">Borrowed</string>
+    <string name="lblTaken">Taken</string>
+    <string name="btnUpdate">Update</string>
+    <string name="txtStatus">Book status</string>
+    <string name="txtAdvanceSearch">Advance Book Search</string>
+    <string name="txtISBN">ISBN</string>
+    <string name="txtKeyword">Keywords</string>
+    <string name="btnSearch">Search</string>
+    <string name="txtBy">By</string>
+    <string name="btnAddToCard">Add To Card</string>
+    <string name="btnForBorrow">Borrow</string>
+    <string name="txtPrice">Price: </string>
+    <string name="txtContentImages">Book picture</string>
+
+
+
+
+</resources>

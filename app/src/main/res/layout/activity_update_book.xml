@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateBook">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/txtUpdateBook"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtPulicationUpdate"
+        android:layout_width="297dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="@string/txtPulication"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPublisherUpdate"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/txtBookName"
+        android:layout_width="296dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="11dp"
+        android:ems="10"
+        android:hint="@string/txtBookName"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtAuthorUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/txtPublisherUpdate"
+        android:layout_width="298dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="48dp"
+        android:ems="10"
+        android:hint="@string/txtPublisher"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtPulicationUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAuthorUpdate"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/txtAuthorUpdate"
+        android:layout_width="295dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="49dp"
+        android:ems="10"
+        android:hint="@string/txtAuthor"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtPublisherUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBookName"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="247dp"
+        android:layout_marginBottom="11dp"
+        android:text="@string/txtStatus"
+        app:layout_constraintBottom_toTopOf="@+id/cbBorrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPulicationUpdate" />
+
+    <CheckBox
+        android:id="@+id/cbRentUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="111dp"
+        android:layout_marginEnd="240dp"
+        android:layout_marginBottom="2dp"
+        android:text="@string/lblRent"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbTaken" />
+
+    <CheckBox
+        android:id="@+id/cbTaken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginEnd="-70dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/lblTaken"
+        app:layout_constraintBottom_toTopOf="@+id/cbRentUpdate"
+        app:layout_constraintEnd_toStartOf="@+id/cbBorrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbBorrow" />
+
+    <CheckBox
+        android:id="@+id/cbBorrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="208dp"
+        android:text="@string/lblBorrow"
+        app:layout_constraintBottom_toTopOf="@+id/cbTaken"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtStatus" />
+
+    <Button
+        android:id="@+id/btnCancelUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="83dp"
+        android:layout_marginEnd="61dp"
+        android:text="@string/btnCancel"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnUpdate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbRentUpdate" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="190dp"
+        android:text="@string/btnUpdate"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPulicationUpdate" />
+</androidx.constraintlayout.widget.ConstraintLayout>
