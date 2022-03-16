@@ -6,43 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".Register">
 
-    <TextView
-        android:id="@+id/txtRegister"
-        android:layout_width="265dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/txtRegister"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
+    <EditText
+        android:id="@+id/txtPassword2"
+        android:layout_width="324dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="31dp"
+        android:ems="10"
+        android:hint="@string/txtConfirmPassword"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtIntro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/txtLaunch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPassword"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/txtName"
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:layout_marginStart="58dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="28dp"
         android:ems="10"
         android:hint="@string/hintName"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtIntro"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
 
     <EditText
@@ -55,12 +50,12 @@
         android:layout_marginBottom="25dp"
         android:ems="10"
         android:hint="@string/hintEmail"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/txtPhone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtName"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
     <EditText
         android:id="@+id/txtPhone"
@@ -73,55 +68,52 @@
         android:hint="@string/hintPhone"
         android:importantForAutofill="no"
         android:inputType="phone"
-        app:layout_constraintBottom_toTopOf="@+id/txtInterest"
+        app:layout_constraintBottom_toTopOf="@+id/txtPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/txtInterest"
+        android:id="@+id/txtPassword"
         android:layout_width="324dp"
         android:layout_height="52dp"
         android:layout_marginStart="59dp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="31dp"
         android:ems="10"
-        android:hint="@string/hintInterest"
+        android:hint="@string/hintPassword"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPhone"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/txtWhere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="89dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="87dp"
         android:text="@string/qsWhere"
         android:textAllCaps="false"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/spWhere"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtInterest"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPassword2" />
 
     <Spinner
         android:id="@+id/spWhere"
         android:layout_width="331dp"
         android:layout_height="52dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="23dp"
         android:entries="@array/txtWhere"
         android:spinnerMode="dialog"
-        app:layout_constraintBottom_toTopOf="@+id/txtConfirm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtWhere" />
 
@@ -129,12 +121,10 @@
         android:id="@+id/txtConfirm"
         android:layout_width="314dp"
         android:layout_height="79dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="39dp"
         android:text="@string/txtConfirm"
-        app:layout_constraintBottom_toTopOf="@+id/btnSend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spWhere" />
@@ -143,10 +133,10 @@
         android:id="@+id/btnSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="162dp"
         android:text="@string/btnSend"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtConfirm" />

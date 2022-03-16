@@ -5,7 +5,7 @@
     <string name="hintName">First Name and Last Name</string>
     <string name="hintEmail">Your email</string>
     <string name="hintPhone">Your phone number</string>
-    <string name="hintInterest">Enter your interest</string>
+    <string name="hintPassword">Enter your Password</string>
     <string name="qsWhere">Where did you find out about us?</string>
     <string-array name="txtWhere">
         <item>Google</item>
@@ -48,8 +48,7 @@
     <string name="btnForBorrow">Borrow</string>
     <string name="txtPrice">Price: </string>
     <string name="txtContentImages">Book picture</string>
-
-
+    <string name="txtConfirmPassword">Confirm Password</string>
 
 
 </resources>
