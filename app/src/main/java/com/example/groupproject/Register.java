@@ -7,14 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 // Done by Steven Ning-300324107
 
 public class Register extends AppCompatActivity {
 
-    EditText username,password, password2;
+    EditText username,email, address, age, password, password2;
     Button register;
+    Spinner interest;
     DBHelper DB;
 
 
@@ -24,16 +26,24 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        username = (EditText) findViewById(R.id.txtEmailRes);
+        username = (EditText) findViewById(R.id.txtName);
+        email = (EditText) findViewById(R.id.txtEmailRes);
+        address = (EditText) findViewById(R.id.txtAddress);
+        age = (EditText) findViewById(R.id.txtAge);
+        interest = (Spinner) findViewById(R.id.spInterest);
         password = (EditText) findViewById(R.id.txtPassword);
-        password2 = (EditText) findViewById(R.id.txtPassword2);
-        register = (Button) findViewById(R.id.btnSend);
+        password2 = (EditText) findViewById(R.id.txtConfirmPass);
+        register = (Button) findViewById(R.id.btnRegister);
         DB = new DBHelper(this);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String user = username.getText().toString();
+                String email_user = email.getText().toString();
+                String addr_user = address.getText().toString();
+                String age_user = age.getText().toString();
+                String inte_user = interest.getSelectedItem().toString();
                 String pass = password.getText().toString();
                 String pass2 = password2.getText().toString();
 
@@ -53,7 +63,7 @@ public class Register extends AppCompatActivity {
 
                         if(checkuser==false){
 
-                            Boolean insert = DB.insertData(user, pass);
+                            Boolean insert = DB.insertData(user,email_user,addr_user,age_user,inte_user, pass);
 
                             if(insert==true){
 
