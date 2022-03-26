@@ -4,19 +4,18 @@
     <string name="txtLaunch">As soon as we launch we will let you know</string>
     <string name="hintName">First Name and Last Name</string>
     <string name="hintEmail">Your email</string>
-    <string name="hintPhone">Your phone number</string>
+    <string name="hintAddess">Your Address</string>
     <string name="hintPassword">Enter your Password</string>
-    <string name="qsWhere">Where did you find out about us?</string>
-    <string-array name="txtWhere">
-        <item>Google</item>
-        <item>Facebook</item>
-        <item>Telegram</item>
-        <item>Other</item>
+    <string name="txtInterest">Your interest: </string>
+    <string name="txtAge">Your Age</string>
+    <string-array name="txtInterest">
+        <item>Nonfiction Books</item>
+        <item>Fiction Books</item>
     </string-array>
     <string name="txtConfirm">By clicking on the "send" button,
         you consent to the processing of your personal data in accordance with
         our personal data processing policy</string>
-    <string name="btnSend">Send</string>
+    <string name="btnRegister">Register</string>
     <string name="txtLogin">Login</string>
     <string name="txtPassword">Password</string>
     <string name="btnCancel">Cancel</string>

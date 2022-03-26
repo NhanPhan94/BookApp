@@ -29,6 +29,7 @@ public class Login extends AppCompatActivity {
         btnlogin = (Button) findViewById(R.id.btnLog);
         DB = new DBHelper(this);
 
+
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -7,23 +7,6 @@
     tools:context=".Register">
 
     <EditText
-        android:id="@+id/txtPassword2"
-        android:layout_width="324dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="31dp"
-        android:ems="10"
-        android:hint="@string/txtConfirmPassword"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassword"
-        tools:ignore="TextContrastCheck" />
-
-    <EditText
         android:id="@+id/txtName"
         android:layout_width="325dp"
         android:layout_height="50dp"
@@ -41,104 +24,131 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
+        android:id="@+id/txtAddress"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="28dp"
+        android:ems="10"
+        android:hint="@string/hintAddess"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
         android:id="@+id/txtEmailRes"
         android:layout_width="323dp"
         android:layout_height="48dp"
         android:layout_marginStart="58dp"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="25dp"
         android:ems="10"
         android:hint="@string/hintEmail"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/txtPhone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
     <EditText
-        android:id="@+id/txtPhone"
-        android:layout_width="324dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="56dp"
+        android:id="@+id/txtAge"
+        android:layout_width="323dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="19dp"
         android:layout_marginEnd="29dp"
-        android:layout_marginBottom="18dp"
         android:ems="10"
-        android:hint="@string/hintPhone"
-        android:importantForAutofill="no"
-        android:inputType="phone"
-        app:layout_constraintBottom_toTopOf="@+id/txtPassword"
+        android:hint="@string/txtAge"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/txtAddress"
+        android:importantForAutofill="no" />
+
+    <Spinner
+        android:id="@+id/spInterest"
+        android:layout_width="153dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="28dp"
+        android:entries="@array/txtInterest"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtInterest"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.517" />
+
+    <TextView
+        android:id="@+id/txtInterest"
+        android:layout_width="131dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/txtInterest"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAge" />
 
     <EditText
         android:id="@+id/txtPassword"
         android:layout_width="324dp"
-        android:layout_height="52dp"
+        android:layout_height="48dp"
         android:layout_marginStart="59dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="31dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="28dp"
         android:ems="10"
-        android:hint="@string/hintPassword"
+        android:hint="@string/txtPassword"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPhone"
+        app:layout_constraintTop_toBottomOf="@+id/spInterest" />
+
+    <EditText
+        android:id="@+id/txtConfirmPass"
+        android:layout_width="324dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="28dp"
+        android:ems="10"
+        android:hint="@string/txtConfirmPassword"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPassword"
         tools:ignore="TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/txtWhere"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="101dp"
+        android:layout_height="48dp"
         android:layout_marginStart="88dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="87dp"
-        android:text="@string/qsWhere"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="41dp"
+        android:text="@string/btnCancel"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegister"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassword2" />
-
-    <Spinner
-        android:id="@+id/spWhere"
-        android:layout_width="331dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="23dp"
-        android:entries="@array/txtWhere"
-        android:spinnerMode="dialog"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtWhere" />
-
-    <TextView
-        android:id="@+id/txtConfirm"
-        android:layout_width="314dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="39dp"
-        android:text="@string/txtConfirm"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spWhere" />
+        app:layout_constraintTop_toBottomOf="@+id/txtConfirmPass" />
 
     <Button
-        android:id="@+id/btnSend"
+        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="162dp"
-        android:text="@string/btnSend"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="75dp"
+        android:text="@string/btnRegister"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtConfirm" />
+        app:layout_constraintStart_toEndOf="@+id/btnExit"
+        app:layout_constraintTop_toBottomOf="@+id/txtConfirmPass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
