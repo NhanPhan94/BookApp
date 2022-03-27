@@ -37,7 +37,7 @@
         android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/txtPulication"
+        android:id="@+id/txtPublicationYear"
         android:layout_width="294dp"
         android:layout_height="58dp"
         android:layout_marginStart="71dp"
@@ -46,10 +46,10 @@
         android:ems="10"
         android:hint="@string/txtPulication"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/cbShare"
+        app:layout_constraintBottom_toTopOf="@+id/chkShare"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPublish"
+        app:layout_constraintTop_toBottomOf="@+id/txtPublisherName"
         tools:ignore="TextContrastCheck"
         android:importantForAutofill="no" />
 
@@ -63,7 +63,7 @@
         android:ems="10"
         android:hint="@string/txtAuthor"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtPublish"
+        app:layout_constraintBottom_toTopOf="@+id/txtPublisherName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBookTitle"
@@ -71,7 +71,7 @@
         android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/txtPublish"
+        android:id="@+id/txtPublisherName"
         android:layout_width="292dp"
         android:layout_height="56dp"
         android:layout_marginStart="71dp"
@@ -79,7 +79,7 @@
         android:ems="10"
         android:hint="@string/txtPublisher"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtPulication"
+        app:layout_constraintBottom_toTopOf="@+id/txtPublicationYear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtAuthor"
@@ -87,20 +87,20 @@
         android:importantForAutofill="no" />
 
     <CheckBox
-        android:id="@+id/cbShare"
+        android:id="@+id/chkShare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="94dp"
         android:layout_marginEnd="234dp"
         android:text="@string/lblShare"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/cbGiveaway"
+        app:layout_constraintBottom_toTopOf="@+id/chkGiveaway"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPulication" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPublicationYear" />
 
     <CheckBox
-        android:id="@+id/cbRent"
+        android:id="@+id/chkRent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="94dp"
@@ -111,20 +111,20 @@
         app:layout_constraintBottom_toTopOf="@+id/btnCancelAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbGiveaway" />
+        app:layout_constraintTop_toBottomOf="@+id/chkGiveaway" />
 
     <CheckBox
-        android:id="@+id/cbGiveaway"
+        android:id="@+id/chkGiveaway"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="94dp"
         android:layout_marginEnd="189dp"
         android:text="@string/lblgiveaway"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/cbRent"
+        app:layout_constraintBottom_toTopOf="@+id/chkRent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbShare" />
+        app:layout_constraintTop_toBottomOf="@+id/chkShare" />
 
     <Button
         android:id="@+id/btnCancelAdd"
@@ -136,7 +136,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbRent" />
+        app:layout_constraintTop_toBottomOf="@+id/chkRent" />
 
     <Button
         android:id="@+id/button2"
@@ -151,6 +151,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnCancelAdd"
-        app:layout_constraintTop_toBottomOf="@+id/txtPulication" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPublicationYear" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
