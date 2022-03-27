@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class Register extends AppCompatActivity {
 
     EditText username,email, address, age, password, password2;
-    Button register;
+    Button register, login;
     Spinner interest;
     DBHelper DB;
 
@@ -35,6 +35,8 @@ public class Register extends AppCompatActivity {
         password = (EditText) findViewById(R.id.txtPassword);
         password2 = (EditText) findViewById(R.id.txtConfirmPass);
         register = (Button) findViewById(R.id.btnRegister);
+        login = (Button) findViewById(R.id.btnLoginTo);
+
         DB = new DBHelper(this);
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -62,11 +64,11 @@ public class Register extends AppCompatActivity {
 
                         Boolean checkuser = DB.checkusername(user);
 
-                        if(checkuser==false){
+                        if(!checkuser){
 
                             Boolean insert = DB.insertData(user,email_user,addr_user,age_user,inte_user, pass);
 
-                            if(insert==true){
+                            if(insert){
 
                                 Toast.makeText(Register.this, "Registered", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(),Login.class);
@@ -82,6 +84,12 @@ public class Register extends AppCompatActivity {
 
                 }
 
+            }
+        });
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Register.this, Login.class));
             }
         });
 

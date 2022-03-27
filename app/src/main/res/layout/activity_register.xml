@@ -128,13 +128,13 @@
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/btnExit"
+        android:id="@+id/btnLoginTo"
         android:layout_width="101dp"
         android:layout_height="48dp"
         android:layout_marginStart="88dp"
         android:layout_marginTop="31dp"
         android:layout_marginEnd="41dp"
-        android:text="@string/btnCancel"
+        android:text="@string/btnLogin"
         app:layout_constraintEnd_toStartOf="@+id/btnRegister"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtConfirmPass" />
@@ -148,7 +148,7 @@
         android:layout_marginEnd="75dp"
         android:text="@string/btnRegister"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnExit"
+        app:layout_constraintStart_toEndOf="@+id/btnLoginTo"
         app:layout_constraintTop_toBottomOf="@+id/txtConfirmPass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,11 +10,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 // Done by Steven Ning-300324107
-
+//
 public class Login extends AppCompatActivity {
 
     EditText username,password;
-    Button btnlogin;
+    Button btnlogin, btnCreateAccount;
     DBHelper DB;
 
 
@@ -27,6 +27,7 @@ public class Login extends AppCompatActivity {
         username = (EditText) findViewById(R.id.txtEmailLog);
         password = (EditText) findViewById(R.id.txtPass);
         btnlogin = (Button) findViewById(R.id.btnLog);
+        btnCreateAccount = (Button) findViewById(R.id.btnCreateAcc);
         DB = new DBHelper(this);
 
 
@@ -44,7 +45,7 @@ public class Login extends AppCompatActivity {
                 }
                 else{
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
-                    if(checkuserpass==true){
+                    if(checkuserpass){
                         // checks if the username and password match in the database for the login, if correct, logs the user in and sends to the home activity/page
 
                         Toast.makeText(Login.this,"Sign in successful", Toast.LENGTH_SHORT).show();
@@ -57,6 +58,12 @@ public class Login extends AppCompatActivity {
                     }
                 }
 
+            }
+        });
+        btnCreateAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Login.this, Register.class));
             }
         });
 
