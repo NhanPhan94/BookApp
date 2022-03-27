@@ -24,7 +24,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/txtAddress"
+        android:id="@+id/txtPostalCode"
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:layout_marginStart="58dp"
@@ -67,7 +67,7 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddress"
+        app:layout_constraintTop_toBottomOf="@+id/txtPostalCode"
         android:importantForAutofill="no" />
 
     <Spinner

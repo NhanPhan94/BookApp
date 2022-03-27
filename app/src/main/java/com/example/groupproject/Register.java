@@ -10,7 +10,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-// Done by Steven Ning-300324107
+// Done by Steven Ning-300324107 - For login
+// Done by Thanh Nhan Phan-300303290- For User database
 
 public class Register extends AppCompatActivity {
 
@@ -28,7 +29,7 @@ public class Register extends AppCompatActivity {
 
         username = (EditText) findViewById(R.id.txtName);
         email = (EditText) findViewById(R.id.txtEmailRes);
-        address = (EditText) findViewById(R.id.txtAddress);
+        address = (EditText) findViewById(R.id.txtPostalCode);
         age = (EditText) findViewById(R.id.txtAge);
         interest = (Spinner) findViewById(R.id.spInterest);
         password = (EditText) findViewById(R.id.txtPassword);

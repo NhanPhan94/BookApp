@@ -4,7 +4,7 @@
     <string name="txtLaunch">As soon as we launch we will let you know</string>
     <string name="hintName">First Name and Last Name</string>
     <string name="hintEmail">Your email</string>
-    <string name="hintAddess">Your Address</string>
+    <string name="hintAddess">Your Postal code</string>
     <string name="hintPassword">Enter your Password</string>
     <string name="txtInterest">Your interest: </string>
     <string name="txtAge">Your Age</string>
