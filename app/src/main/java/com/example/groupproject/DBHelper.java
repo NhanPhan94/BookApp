@@ -45,9 +45,9 @@ public class DBHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase MyDatabase) {
         String query1 = "CREATE TABLE " + TABLE1_NAME + "(" + T1COL1 + " Integer PRIMARY KEY,"+
                 T1COL2 + " Text, " + T1COL3 + " Text, " + T1COL4 + " Text, " +
-                T1COL5 + " Text, " + T1COL6 + " Text, " + T1COL7 + " Text)";
+                T1COL5 + " Text, " + T1COL6 + " Text, " + T1COL7 + " Text);";
 
-        MyDatabase.execSQL(query1);
+
 
         String query2 ="CREATE TABLE " +
                 TABLE2_NAME +
@@ -55,10 +55,19 @@ public class DBHelper extends SQLiteOpenHelper{
                 T2COL2 + " Text, " +
                 T2COL3 + " Text, " +
                 T2COL4 + " Text, " +
-                T2COL5 + " Integer," +
-                "FOREIGN KEY(" + T1COL1 + ") REFERENCES " +TABLE1_NAME+"("+T1COL1 + "))";
+                T2COL5 + " Integer, " +
+                "FOREIGN KEY(" + T1COL1 + ") REFERENCES " +TABLE1_NAME+"("+T1COL1 + ")"+
+                ");";
 
-        MyDatabase.execSQL(query2);
+        try{
+            MyDatabase.execSQL(query1);
+            MyDatabase.execSQL(query2);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
