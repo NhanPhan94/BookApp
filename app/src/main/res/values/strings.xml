@@ -51,6 +51,8 @@
     <string name="txtPrice">Price: </string>
     <string name="txtContentImages">Book picture</string>
     <string name="txtConfirmPassword">Confirm Password</string>
+    <string name="btnUpload">Upload Book Image</string>
+    <string name="imgBook">Book Image</string>
 
 
 </resources>

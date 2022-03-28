@@ -10,7 +10,7 @@
         android:id="@+id/txtAddingbook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="4dp"
         android:text="@string/txtAddingbook"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,137 +20,161 @@
 
     <EditText
         android:id="@+id/txtBookTitle"
-        android:layout_width="296dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="22dp"
+        android:layout_width="292dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="50dp"
         android:ems="10"
         android:hint="@string/txtBooktitle"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtAuthor"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtAddingbook"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/txtPublicationYear"
-        android:layout_width="294dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="46dp"
+        android:layout_width="292dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
         android:ems="10"
         android:hint="@string/txtPulication"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/chkShare"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPublisherName"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/txtAuthor"
-        android:layout_width="293dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginEnd="47dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="292dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
         android:ems="10"
         android:hint="@string/txtAuthor"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtPublisherName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBookTitle"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/txtPublisherName"
         android:layout_width="292dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="71dp"
-        android:layout_marginEnd="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
         android:ems="10"
         android:hint="@string/txtPublisher"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtPublicationYear"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtAuthor"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <CheckBox
         android:id="@+id/chkShare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="94dp"
-        android:layout_marginEnd="234dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="272dp"
+        android:layout_marginBottom="14dp"
         android:text="@string/lblShare"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/chkGiveaway"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelAdd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPublicationYear" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/chkRent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="94dp"
-        android:layout_marginEnd="244dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginStart="284dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="14dp"
         android:text="@string/lblRent"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCancelAdd"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddBook"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chkGiveaway" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/chkGiveaway"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="94dp"
-        android:layout_marginEnd="189dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="14dp"
         android:text="@string/lblgiveaway"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/chkRent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chkShare" />
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelAdd"
+        app:layout_constraintEnd_toStartOf="@+id/chkRent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnCancelAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
-        android:layout_marginBottom="34dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="36dp"
         android:text="@string/btnCancel"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chkRent" />
+        app:layout_constraintEnd_toStartOf="@+id/btnAddBook"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnAddBook"
         android:layout_width="114dp"
         android:layout_height="49dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="163dp"
-        android:layout_marginEnd="72dp"
         android:layout_marginBottom="34dp"
         android:text="@string/btnAddBook"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnCancelAdd"
+        app:layout_constraintTop_toBottomOf="@+id/txtPublicationYear"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imgBook"
+        android:layout_width="127dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="54dp"
+        android:contentDescription="@string/imgBook"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPublicationYear" />
+
+    <Button
+        android:id="@+id/btnUpdload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="62dp"
+        android:text="@string/btnUpload"
+        app:layout_constraintEnd_toStartOf="@+id/imgBook"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPublicationYear" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
