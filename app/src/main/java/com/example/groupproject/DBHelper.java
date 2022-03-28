@@ -77,15 +77,15 @@ public class DBHelper extends SQLiteOpenHelper{
         onCreate(MyDatabase);
     }
 
-    public Boolean insertData(String username,String email, String address, String age,String interest, String password) {
+    public Boolean insertData(UserProfile userProfile) {
         SQLiteDatabase MyDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(T1COL2,username);
-        contentValues.put(T1COL3,email);
-        contentValues.put(T1COL4,address);
-        contentValues.put(T1COL5,age);
-        contentValues.put(T1COL6,interest);
-        contentValues.put(T1COL7,password);
+        contentValues.put(T1COL2,userProfile.getUsername());
+        contentValues.put(T1COL3,userProfile.getEmail());
+        contentValues.put(T1COL4,userProfile.getAddress());
+        contentValues.put(T1COL5,userProfile.getAge());
+        contentValues.put(T1COL6,userProfile.getInterest());
+        contentValues.put(T1COL7,userProfile.getPassword());
         long result = MyDatabase.insert(TABLE1_NAME,null,contentValues);
 
         if(result==-1){

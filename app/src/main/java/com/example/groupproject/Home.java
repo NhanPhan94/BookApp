@@ -13,6 +13,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        setTitle(R.string.welcome);
 
         Button addBook = (Button)findViewById(R.id.btnAddUpdate);
         addBook.setOnClickListener(new View.OnClickListener() {

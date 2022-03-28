@@ -42,11 +42,14 @@ public class Register extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                UserProfile userProfile = new UserProfile();
+                userProfile.setUsername(username.getText().toString());
+                userProfile.setEmail(email.getText().toString());
+                userProfile.setAddress(address.getText().toString());
+                userProfile.setAge(age.getText().toString());
+                userProfile.setInterest(interest.getSelectedItem().toString());
+                userProfile.setPassword(password.getText().toString());
                 String user = username.getText().toString();
-                String email_user = email.getText().toString();
-                String addr_user = address.getText().toString();
-                String age_user = age.getText().toString();
-                String inte_user = interest.getSelectedItem().toString();
                 String pass = password.getText().toString();
                 String pass2 = password2.getText().toString();
 
@@ -66,7 +69,7 @@ public class Register extends AppCompatActivity {
 
                         if(!checkuser){
 
-                            Boolean insert = DB.insertData(user,email_user,addr_user,age_user,inte_user, pass);
+                            Boolean insert = DB.insertData(userProfile);
 
                             if(insert){
 
