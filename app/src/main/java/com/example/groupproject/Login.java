@@ -1,13 +1,17 @@
 package com.example.groupproject;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import entities.UserProfile;
 
 // Done by Steven Ning-300324107
 //
@@ -44,8 +48,22 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this,"Please enter all the fields", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
-                    if(checkuserpass){
+                    UserProfile userProfile = DB.login(user,pass);
+                    if(userProfile == null){
+                        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+                        builder.setTitle(R.string.error);
+                        builder.setMessage(R.string.invalid);
+                        builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        });
+                        builder.show();
+                    }
+                    else {
+                        Boolean checkuserpass = DB.checkusernamepassword(user, pass);
+                      if(checkuserpass){
                         // checks if the username and password match in the database for the login, if correct, logs the user in and sends to the home activity/page
 
                         Toast.makeText(Login.this,"Sign in successful", Toast.LENGTH_SHORT).show();
@@ -56,6 +74,8 @@ public class Login extends AppCompatActivity {
                         Toast.makeText(Login.this,"Invalid info", Toast.LENGTH_SHORT).show();
 
                     }
+                    }
+
                 }
 
             }

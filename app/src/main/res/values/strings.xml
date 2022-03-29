@@ -51,6 +51,9 @@
     <string name="txtPrice">Price: </string>
     <string name="txtContentImages">Book picture</string>
     <string name="txtConfirmPassword">Confirm Password</string>
+    <string name="error">Error value</string>
+    <string name="invalid">Invalid input value. Check usernem or password</string>
+    <string name="ok">Got it</string>
 
 
 </resources>

@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import entities.UserProfile;
+
 // Done by Steven Ning-300324107 - For login
 // Done by Thanh Nhan Phan-300303290- For User database
 

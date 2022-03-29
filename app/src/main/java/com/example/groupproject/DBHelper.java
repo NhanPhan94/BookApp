@@ -6,8 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-
-
+import entities.UserProfile;
 
 
 public class DBHelper extends SQLiteOpenHelper{
@@ -117,6 +116,51 @@ public class DBHelper extends SQLiteOpenHelper{
 
             return true;
         }
+    }
+    public UserProfile login (String username, String password){
+        UserProfile userProfile = null;
+        try{
+            SQLiteDatabase db = this.getWritableDatabase();
+            String query = "SELECT * FROM " + TABLE1_NAME + " WHERE username = ? AND password = ?";
+            Cursor cursor = db.rawQuery(query, new String[]{username, password});
+            if(cursor.moveToFirst()){
+                userProfile = new UserProfile();
+                userProfile.setUserId(cursor.getInt(0));
+                userProfile.setUsername(cursor.getString(1));
+                userProfile.setEmail(cursor.getString(2));
+                userProfile.setAddress(cursor.getString(3));
+                userProfile.setAge(cursor.getString(4));
+                userProfile.setInterest(cursor.getString(5));
+                userProfile.setPassword(cursor.getString(6));
+            }
+        }
+        catch (Exception e){
+            userProfile = null;
+        }
+        return userProfile;
+    }
+
+    public UserProfile checkuser (String username){
+        UserProfile userProfile = null;
+        try{
+            SQLiteDatabase db = this.getWritableDatabase();
+            String query = "SELECT * FROM " + TABLE1_NAME + " WHERE username = ?";
+            Cursor cursor = db.rawQuery(query, new String[]{username});
+            if(cursor.moveToFirst()){
+                userProfile = new UserProfile();
+                userProfile.setUserId(cursor.getInt(0));
+                userProfile.setUsername(cursor.getString(1));
+                userProfile.setEmail(cursor.getString(2));
+                userProfile.setAddress(cursor.getString(3));
+                userProfile.setAge(cursor.getString(4));
+                userProfile.setInterest(cursor.getString(5));
+                userProfile.setPassword(cursor.getString(6));
+            }
+        }
+        catch (Exception e){
+            userProfile = null;
+        }
+        return userProfile;
     }
 
     public Boolean checkusername(String username){

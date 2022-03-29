@@ -1,4 +1,4 @@
-package com.example.groupproject;
+package entities;
 
 import java.io.Serializable;
 
@@ -9,6 +9,7 @@ public class UserProfile implements Serializable {
     private String address;
     private String age;
     private String interest;
+    private String password;
 
     public int getUserId() {
         return userId;
@@ -66,6 +67,6 @@ public class UserProfile implements Serializable {
         this.password = password;
     }
 
-    private String password;
+
 
 }
