@@ -48,24 +48,22 @@ public class DBHelper extends SQLiteOpenHelper{
 
 
 
-        String query2 ="CREATE TABLE " +
-                TABLE2_NAME +
-                "(" + T2COL1 + " Integer PRIMARY KEY,"+
-                T2COL2 + " Text, " +
-                T2COL3 + " Text, " +
-                T2COL4 + " Text, " +
-                T2COL5 + " Integer, " +
-                "FOREIGN KEY(" + T1COL1 + ") REFERENCES " +TABLE1_NAME+"("+T1COL1 + ")"+
-                ");";
+//        String query2 ="CREATE TABLE " +
+//                TABLE2_NAME +
+//                "(" + T2COL1 + " Integer PRIMARY KEY,"+
+//                T2COL2 + " Text, " +
+//                T2COL3 + " Text, " +
+//                T2COL4 + " Text, " +
+//                T2COL5 + " Integer, " +
+//                "FOREIGN KEY(" + T1COL1 + ") REFERENCES " +TABLE1_NAME+"("+T1COL1 + ")"+
+//                ");";
 
-        try{
             MyDatabase.execSQL(query1);
-            MyDatabase.execSQL(query2);
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-        }
+            MyDatabase.execSQL("create Table Book_Information(bookID INT primary key AUTOINCREMENT, bookTitle TEXT, authorName TEXT, " +
+                    "publisherName TEXT, publicationYear TEXT, borrowActivity TEXT, Id INT," +
+                    " foreign key(Id) REFERENCES Users_Information(Id))");
+
+
 
     }
 
@@ -100,12 +98,12 @@ public class DBHelper extends SQLiteOpenHelper{
                                   String borrowActivity, int userId){
         SQLiteDatabase MyDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(T2COL2,bookTitle);
-        contentValues.put(T2COL3,authorName);
-        contentValues.put(T2COL4,publisherName);
-        contentValues.put(T2COL5,publicationYear);
-        contentValues.put(T2COL6,borrowActivity);
-        contentValues.put(T1COL1,userId);
+        contentValues.put("bookTitle",bookTitle);
+        contentValues.put("authorName",authorName);
+        contentValues.put("publisherName",publisherName);
+        contentValues.put("publicationYear",publicationYear);
+        contentValues.put("borrowActivity",borrowActivity);
+        contentValues.put("Id",userId);
 
         long result = MyDatabase.insert(TABLE2_NAME,null,contentValues);
 
