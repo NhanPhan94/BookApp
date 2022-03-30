@@ -51,8 +51,17 @@
     <string name="txtPrice">Price: </string>
     <string name="txtContentImages">Book picture</string>
     <string name="txtConfirmPassword">Confirm Password</string>
+    <string name="error">Error</string>
+    <string name="invalid">Invalid input</string>
+    <string name="ok">Got it</string>
     <string name="btnUpload">Upload Book Image</string>
     <string name="imgBook">Book Image</string>
+    <string-array name="spProfile">
+        <item>Edit profile</item>
+        <item>View profile</item>
+        <item>Logout</item>
+    </string-array>
+    <string name="btnSave">Update</string>
 
 
 </resources>

@@ -28,6 +28,7 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        setTitle(R.string.btnRegister);
 
         username = (EditText) findViewById(R.id.txtName);
         email = (EditText) findViewById(R.id.txtEmailRes);
@@ -36,8 +37,8 @@ public class Register extends AppCompatActivity {
         interest = (Spinner) findViewById(R.id.spInterest);
         password = (EditText) findViewById(R.id.txtPassword);
         password2 = (EditText) findViewById(R.id.txtConfirmPass);
-        register = (Button) findViewById(R.id.btnRegister);
-        login = (Button) findViewById(R.id.btnLoginTo);
+        register = (Button) findViewById(R.id.btnCancelChange);
+        login = (Button) findViewById(R.id.btnSave);
 
         DB = new DBHelper(this);
 

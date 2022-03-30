@@ -27,7 +27,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        setTitle(R.string.btnLogin);
         username = (EditText) findViewById(R.id.txtUserLog);
         password = (EditText) findViewById(R.id.txtPass);
         btnlogin = (Button) findViewById(R.id.btnLog);
@@ -68,6 +68,7 @@ public class Login extends AppCompatActivity {
 
                         Toast.makeText(Login.this,"Sign in successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), Home.class);
+                        intent.putExtra("userprofile",userProfile);
                         startActivity(intent);
                     }else{
                         // if returns a false value, will tell the user the password/login do no match
