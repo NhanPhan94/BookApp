@@ -10,19 +10,17 @@
         <entry key="..\:/Douglas College/Semester 3/CSIS 3175 - INTRODUCTION TO MOBILE APPLICATION DEVELOPMENT/Project/FINAL/BookApp/app/src/main/res/layout/activity_adding_book.xml" value="0.176" />
         <entry key="..\:/Douglas College/Semester 3/CSIS 3175 - INTRODUCTION TO MOBILE APPLICATION DEVELOPMENT/Project/FINAL/BookApp/app/src/main/res/layout/activity_home.xml" value="0.2421875" />
         <entry key="..\:/Douglas College/Semester 3/CSIS 3175 - INTRODUCTION TO MOBILE APPLICATION DEVELOPMENT/Project/FINAL/BookApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Douglas College/Semester 3/CSIS 3175 - INTRODUCTION TO MOBILE APPLICATION DEVELOPMENT/Project/FINAL/BookApp/app/src/main/res/layout/activity_register.xml" value="0.14427083333333332" />
+        <entry key="..\:/Douglas College/Semester 3/CSIS 3175 - INTRODUCTION TO MOBILE APPLICATION DEVELOPMENT/Project/FINAL/BookApp/app/src/main/res/layout/activity_view_profile.xml" value="0.1" />
         <entry key="..\:/Douglas College/Semester 3/CSIS 3175 - INTRODUCTION TO MOBILE APPLICATION DEVELOPMENT/Project/v2/BookApp/app/src/main/res/layout/activity_adding_book.xml" value="0.264" />
         <entry key="..\:/Douglas College/Semester 3/CSIS 3175 - INTRODUCTION TO MOBILE APPLICATION DEVELOPMENT/Project/v2/BookApp/app/src/main/res/layout/activity_home.xml" value="0.2421875" />
         <entry key="app/src/main/res/layout/activity_adding_book.xml" value="0.3425925925925926" />
         <entry key="app/src/main/res/layout/activity_book_info.xml" value="0.30364583333333334" />
-        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.4244791666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.4244791666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.39351851851851855" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.40989583333333335" />
         <entry key="app/src/main/res/layout/activity_search_book.xml" value="0.4244791666666667" />
         <entry key="app/src/main/res/layout/activity_update_book.xml" value="0.4244791666666667" />
-        <entry key="app/src/main/res/layout/activity_view_profile.xml" value="0.24166666666666667" />
-        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.2515625" />
       </map>
     </option>
   </component>
