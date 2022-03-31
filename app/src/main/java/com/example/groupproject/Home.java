@@ -14,8 +14,9 @@ import entities.UserProfile;
 
 public class Home extends AppCompatActivity {
         private TextView welcomeText;
-        private Button btnEditProfile, btnViewProfile, btnLogOut;
+        private Button btnEditProfile, btnViewProfile, btnlogout;
         private UserProfile userprofile;
+        private Session session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,12 +49,24 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        btnLogOut = findViewById(R.id.btnLogout);
+//        btnLogOut = findViewById(R.id.btnLogout);
+//
+//        btnLogOut.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(Home.this, Login.class));
+//            }
+//        });
 
-        btnLogOut.setOnClickListener(new View.OnClickListener() {
+        session = new Session(this);
+        if (!session.loggedin()) {
+            logout();
+        }
+        btnlogout = (Button) findViewById(R.id.btnLogout);
+        btnlogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Home.this, Login.class));
+                logout();
             }
         });
 
@@ -68,7 +81,9 @@ public class Home extends AppCompatActivity {
 
             }
         });
-
-
+    }
+    private void logout(){
+        session.setLoggedin(false);
+        startActivity(new Intent(Home.this,Login.class));
     }
 }
