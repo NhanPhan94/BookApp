@@ -1,66 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Home">
-
-    <Button
-        android:id="@+id/btnAddUpdate"
-        android:layout_width="285dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="141dp"
-        android:text="@string/btnAdd"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnBorrow"
-        android:layout_width="281dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="33dp"
-        android:text="@string/btnBorrow"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/btnAddUpdate"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddUpdate" />
-
-    <Button
-        android:id="@+id/btnReading"
-        android:layout_width="281dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="35dp"
-        android:text="@string/btnReading"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBorrow" />
 
     <TextView
         android:id="@+id/txtWelcome"
-        android:layout_width="138dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="28dp"
-        android:text="Nhan"
-        android:textAlignment="viewEnd"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="15dp"
+        android:textAlignment="textEnd"
+        android:textColor="#3949AB"
         android:textSize="16sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.399"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="italic" />
 
-    <Spinner
-        android:id="@+id/spProfile"
-        android:layout_width="121dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="77dp"
-        android:entries="@array/spProfile"
-        app:layout_constraintBottom_toTopOf="@+id/btnAddUpdate"
-        app:layout_constraintStart_toEndOf="@+id/txtWelcome"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btnAddUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/btnAdd"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnBorrow"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/btnBorrow"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnReadingTracker"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/btnReading"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnViewProfile"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/btnviewProfile"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/btnChangeProfile"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/btnLogout"
+        android:textSize="20sp" />
+
+</LinearLayout>

@@ -62,19 +62,10 @@ public class Login extends AppCompatActivity {
                         builder.show();
                     }
                     else {
-                        Boolean checkuserpass = DB.checkusernamepassword(user, pass);
-                      if(checkuserpass){
-                        // checks if the username and password match in the database for the login, if correct, logs the user in and sends to the home activity/page
-
                         Toast.makeText(Login.this,"Sign in successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), Home.class);
                         intent.putExtra("userprofile",userProfile);
                         startActivity(intent);
-                    }else{
-                        // if returns a false value, will tell the user the password/login do no match
-                        Toast.makeText(Login.this,"Invalid info", Toast.LENGTH_SHORT).show();
-
-                    }
                     }
 
                 }

@@ -1,154 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Register">
 
     <EditText
         android:id="@+id/txtName"
-        android:layout_width="325dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="@string/hintName"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/txtPostalCode"
-        android:layout_width="325dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="152dp"
-        android:layout_marginEnd="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="@string/hintAddess"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/txtEmailRes"
-        android:layout_width="323dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="@string/hintEmail"
         android:importantForAutofill="no"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/txtAge"
-        android:layout_width="323dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="29dp"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="@string/txtAge"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPostalCode"
-        android:importantForAutofill="no" />
-
-    <Spinner
-        android:id="@+id/spInterest"
-        android:layout_width="153dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="28dp"
-        android:entries="@array/txtInterest"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtInterest"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.517" />
+        android:importantForAutofill="no"
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/txtInterest"
-        android:layout_width="131dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/txtInterest"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAge" />
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/spInterest"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:entries="@array/txtInterest"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/txtPassword"
-        android:layout_width="324dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="@string/txtPassword"
         android:importantForAutofill="no"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spInterest" />
-
-    <EditText
-        android:id="@+id/txtConfirmPass"
-        android:layout_width="324dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:hint="@string/txtConfirmPassword"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassword"
-        tools:ignore="TextContrastCheck" />
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="101dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="41dp"
-        android:text="@string/btnSave"
-        app:layout_constraintEnd_toStartOf="@+id/btnCancelChange"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtConfirmPass" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnSave" />
 
     <Button
         android:id="@+id/btnCancelChange"
-        android:layout_width="wrap_content"
+        android:layout_width="422dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="75dp"
-        android:text="@string/btnCancel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnSave"
-        app:layout_constraintTop_toBottomOf="@+id/txtConfirmPass" />
+        android:text="@string/btnCancel" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

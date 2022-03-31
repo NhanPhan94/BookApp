@@ -161,6 +161,29 @@ public class DBHelper extends SQLiteOpenHelper{
         return userProfile;
     }
 
+    public UserProfile find (int id){
+        UserProfile userProfile = null;
+        try{
+            SQLiteDatabase db = this.getWritableDatabase();
+            String query = "SELECT * FROM " + TABLE1_NAME + " WHERE id = ?";
+            Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(id)});
+            if(cursor.moveToFirst()){
+                userProfile = new UserProfile();
+                userProfile.setUserId(cursor.getInt(0));
+                userProfile.setUsername(cursor.getString(1));
+                userProfile.setEmail(cursor.getString(2));
+                userProfile.setAddress(cursor.getString(3));
+                userProfile.setAge(cursor.getString(4));
+                userProfile.setInterest(cursor.getString(5));
+                userProfile.setPassword(cursor.getString(6));
+            }
+        }
+        catch (Exception e){
+            userProfile = null;
+        }
+        return userProfile;
+    }
+
     public Boolean checkusername(String username){
         SQLiteDatabase MyDatabase = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE1_NAME + " WHERE username = ?" ;
@@ -183,6 +206,27 @@ public class DBHelper extends SQLiteOpenHelper{
         else{
             return false;
         }
+    }
+
+    public Boolean updateData(UserProfile userProfile) {
+        SQLiteDatabase MyDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(T1COL2,userProfile.getUsername());
+        contentValues.put(T1COL3,userProfile.getEmail());
+        contentValues.put(T1COL4,userProfile.getAddress());
+        contentValues.put(T1COL5,userProfile.getAge());
+        contentValues.put(T1COL6,userProfile.getInterest());
+        contentValues.put(T1COL7,userProfile.getPassword());
+        long result = MyDatabase.update(TABLE1_NAME, contentValues, T1COL1 + " = ?",
+                new String[] {String.valueOf(userProfile.getUserId())});
+
+        if(result < 0){
+            return false;
+        }
+        else{
+            return true;
+        }
+
     }
 
 

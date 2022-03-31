@@ -63,33 +63,25 @@ public class Register extends AppCompatActivity {
 
                     Toast.makeText(Register.this,"Please enter all the fields", Toast.LENGTH_SHORT).show();
                 }
-                else{
-
-                    if(pass.equals(pass2)){
-                        // checking if password is equal to conformation password
-
-                        Boolean checkuser = DB.checkusername(user);
-
-                        if(!checkuser){
-
-                            Boolean insert = DB.insertData(userProfile);
-
-                            if(insert){
-
-                                Toast.makeText(Register.this, "Registered", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(),Login.class);
-                                startActivity(intent);
-                            }else{
-                                Toast.makeText(Register.this, "User already exists", Toast.LENGTH_SHORT).show();
-                            }
-
-                        }else{
-                            Toast.makeText(Register.this,"Passwords do not match", Toast.LENGTH_SHORT).show();
+                else
+                {
+                    if(!pass.equals(pass2))
+                    {
+                        password2.setError("Passwords do not match");
+                    }
+                    else{
+                        if(DB.checkusername(user))
+                        {
+                            Toast.makeText(Register.this, "User already exists", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            DB.insertData(userProfile);
+                            Toast.makeText(Register.this, "Registered", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getApplicationContext(),Login.class);
+                            startActivity(intent);
                         }
                     }
-
                 }
-
             }
         });
         login.setOnClickListener(new View.OnClickListener() {

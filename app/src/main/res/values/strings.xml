@@ -10,7 +10,7 @@
     <string name="hintPassword">Enter your Password</string>
     <string name="txtInterest">Your interest: </string>
     <string name="txtAge">Your Age</string>
-    <string-array name="txtInterest">
+    <string-array name="txtInterest">Your interest
         <item>Nonfiction Books</item>
         <item>Fiction Books</item>
     </string-array>
@@ -56,12 +56,12 @@
     <string name="ok">Got it</string>
     <string name="btnUpload">Upload Book Image</string>
     <string name="imgBook">Book Image</string>
-    <string-array name="spProfile">
-        <item>Edit profile</item>
-        <item>View profile</item>
-        <item>Logout</item>
-    </string-array>
     <string name="btnSave">Update</string>
+    <string name="btnChangeProfile">Change Profile</string>
+    <string name="btnviewProfile">View Profile</string>
+    <string name="btnLogout">Logout</string>
+    <string name="errorChange">Change profile got error</string>
+    <string name="useExits">The user already exits</string>
 
 
 </resources>
