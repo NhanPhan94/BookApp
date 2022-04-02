@@ -49,15 +49,6 @@ public class Home extends AppCompatActivity {
             }
         });
 
-//        btnLogOut = findViewById(R.id.btnLogout);
-//
-//        btnLogOut.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(Home.this, Login.class));
-//            }
-//        });
-
         session = new Session(this);
         if (!session.loggedin()) {
             logout();

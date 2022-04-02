@@ -190,9 +190,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         btnlogin.setOnClickListener(this);
         btnCreateAccount.setOnClickListener(this);
 
-        if(session.loggedin()){
-            startActivity(new Intent(Login.this,Home.class));
-        }
     }
 
     @Override
