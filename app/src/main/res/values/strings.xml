@@ -56,6 +56,9 @@
     <string name="ok">Got it</string>
     <string name="btnUpload">Upload Book Image</string>
     <string name="imgBook">Book Image</string>
+    <string name="bookImageSmall">Book Image</string>
+    <string name="bookImgName">Book Image Name</string>
+    <string name="rentPrice">Enter Rent Amount</string>
     <string name="btnSave">Update</string>
     <string name="btnChangeProfile">Change Profile</string>
     <string name="btnviewProfile">View Profile</string>
