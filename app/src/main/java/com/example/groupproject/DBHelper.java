@@ -11,8 +11,8 @@ import entities.UserProfile;
 
 public class DBHelper extends SQLiteOpenHelper{
 
-    public static final String DBNAME = "BookSharing.db";
-    final static int DATABASE_VERSION = 1;
+    public static final String DBNAME = "BookSharing1.db";
+    final static int DATABASE_VERSION = 2;
     final static String TABLE1_NAME = "Users_Information";
     final static String TABLE2_NAME = "Book_Information";
     final static String T1COL1 = "Id";
@@ -59,9 +59,9 @@ public class DBHelper extends SQLiteOpenHelper{
 //                ");";
 
             MyDatabase.execSQL(query1);
-            MyDatabase.execSQL("create Table Book_Information(bookID INT primary key AUTOINCREMENT, bookTitle TEXT, authorName TEXT, " +
-                    "publisherName TEXT, publicationYear TEXT, borrowActivity TEXT, Id INT," +
-                    " foreign key(Id) REFERENCES Users_Information(Id))");
+            MyDatabase.execSQL("create Table Book_Information(bookID Integer primary key, bookTitle TEXT, authorName TEXT, " +
+                "publisherName TEXT, publicationYear TEXT, borrowActivity TEXT,bookImageName TEXT, bookStatus TEXT, rentPrice REAL, Id Integer," +
+                " foreign key(Id) REFERENCES Users_Information(Id))");
 
 
 
@@ -95,7 +95,7 @@ public class DBHelper extends SQLiteOpenHelper{
     }
 
     public Boolean insertBookData(String bookTitle, String authorName, String publisherName, String publicationYear,
-                                  String borrowActivity, int userId){
+                                  String borrowActivity, String imgURL,String bookStatus,Float rentPrice, int userId){
         SQLiteDatabase MyDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("bookTitle",bookTitle);
@@ -103,9 +103,12 @@ public class DBHelper extends SQLiteOpenHelper{
         contentValues.put("publisherName",publisherName);
         contentValues.put("publicationYear",publicationYear);
         contentValues.put("borrowActivity",borrowActivity);
+        contentValues.put("bookImageName",imgURL);
+        contentValues.put("bookStatus",bookStatus);
+        contentValues.put("rentPrice",rentPrice);
         contentValues.put("Id",userId);
 
-        long result = MyDatabase.insert(TABLE2_NAME,null,contentValues);
+        long result = MyDatabase.insert("Book_Information",null,contentValues);
 
         if(result==-1){
             return false;
@@ -114,7 +117,9 @@ public class DBHelper extends SQLiteOpenHelper{
 
             return true;
         }
+
     }
+
     public UserProfile login (String username, String password){
         UserProfile userProfile = null;
         try{
