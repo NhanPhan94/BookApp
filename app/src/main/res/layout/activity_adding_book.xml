@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="@string/txtAddingbook"
-        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,23 +37,6 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/txtPublicationYear"
-        android:layout_width="292dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="50dp"
-        android:ems="10"
-        android:hint="@string/txtPulication"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPublisherName"
-        tools:ignore="TextContrastCheck" />
-
-    <EditText
         android:id="@+id/txtbookImageName"
         android:layout_width="292dp"
         android:layout_height="48dp"
@@ -60,7 +44,7 @@
         android:layout_marginTop="72dp"
         android:layout_marginEnd="50dp"
         android:ems="10"
-        android:hint="@string/imgBook"
+        android:hint="@string/bookImgName"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -156,15 +140,14 @@
         android:id="@+id/btnAddBook"
         android:layout_width="114dp"
         android:layout_height="49dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="163dp"
-        android:layout_marginBottom="34dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="83dp"
+        android:layout_marginBottom="44dp"
         android:text="@string/btnAddBook"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnCancelAdd"
-        app:layout_constraintTop_toBottomOf="@+id/txtPublicationYear"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnCancelAdd" />
 
     <EditText
         android:id="@+id/txtRentPrice"
@@ -180,5 +163,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/chkRent"
         app:layout_constraintTop_toBottomOf="@+id/txtbookImageName" />
+
+    <EditText
+        android:id="@+id/txtPublicationYear"
+        android:layout_width="292dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
+        android:ems="10"
+        android:hint="@string/txtPulication"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPublisherName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

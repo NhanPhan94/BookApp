@@ -14,7 +14,7 @@ import entities.UserProfile;
 
 public class Home extends AppCompatActivity {
         private TextView welcomeText;
-        private Button btnEditProfile, btnViewProfile, btnlogout;
+        private Button btnEditProfile, btnViewProfile, btnlogout, btnViewBooks, addBook;
         private UserProfile userprofile;
         private Session session;
     @Override
@@ -29,11 +29,24 @@ public class Home extends AppCompatActivity {
         userprofile = (UserProfile) intent.getSerializableExtra("userprofile");
         welcomeText.setText("Welcome " + userprofile.getUsername());
 
-        Button addBook = (Button)findViewById(R.id.btnAddUpdate);
+        addBook = (Button)findViewById(R.id.btnAddUpdate);
         addBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Home.this, AddingBook.class));
+                //startActivity(new Intent(Home.this, AddingBook.class));
+                Intent btnAddBookIntent = new Intent(Home.this, AddingBook.class);
+                btnAddBookIntent.putExtra("userprofile",userprofile);
+                startActivity(btnAddBookIntent);
+            }
+        });
+
+        btnViewBooks = (Button) findViewById(R.id.btnViewBooks);
+        btnViewBooks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent btnAddBookIntent = new Intent(Home.this, BookList.class);
+                btnAddBookIntent.putExtra("userprofile",userprofile);
+                startActivity(btnAddBookIntent);
             }
         });
 

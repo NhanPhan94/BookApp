@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
@@ -18,11 +21,16 @@ import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 
+import entities.UserProfile;
+
 public class AddingBook extends AppCompatActivity {
 
     int SELECT_PICTURE = 200;
     ImageView imgBook;
     String borrowActivity = "";
+    int userid;
+    UserProfile userprofile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +51,13 @@ public class AddingBook extends AppCompatActivity {
         final Button btnAddBook = (Button) findViewById(R.id.btnAddBook);
         final Button btnCancel = (Button) findViewById(R.id.btnCancelAdd);
 
-//        SharedPreferences sharedPreferences =
-//                PreferenceManager.getDefaultSharedPreferences(this);
-//        int userid = sharedPreferences.getInt("key1",0);
+        Intent intent = getIntent();
+        userprofile = (UserProfile) intent.getSerializableExtra("userprofile");
+        userid = userprofile.getUserId();
 
         DBHelper  dbHelper= new DBHelper(this);
+
+
 
 //        btnUpload.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -64,7 +74,9 @@ public class AddingBook extends AppCompatActivity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AddingBook.this, Home.class));
+                Intent btnCancelIntent = new Intent(AddingBook.this, Home.class);
+                btnCancelIntent.putExtra("userprofile",userprofile);
+                startActivity(btnCancelIntent);
             }
         });
 
@@ -103,15 +115,19 @@ public class AddingBook extends AppCompatActivity {
 
                 }
 
-                Boolean insert = dbHelper.insertBookData(bookTitle,author,publisher,publicationYear,borrowActivity,bookImageName,"Available",rentPrice,1);
+                Boolean insert = dbHelper.insertBookData(bookTitle,author,publisher,publicationYear,borrowActivity,bookImageName,"Available",rentPrice,userid);
                 if(insert==true){
                     Toast.makeText(AddingBook.this,"Book is Successfully Added", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(AddingBook.this, Home.class));
+                    Intent addBookIntent = new Intent(AddingBook.this, Home.class);
+                    addBookIntent.putExtra("userprofile",userprofile);
+                    startActivity(addBookIntent);
                 }
                 else{
 
                     Toast.makeText(AddingBook.this,"Book is not added. Please try again.", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(AddingBook.this, Home.class));
+                    Intent addBookIntent = new Intent(AddingBook.this, Home.class);
+                    addBookIntent.putExtra("userprofile",userprofile);
+                    startActivity(addBookIntent);
                 }
 
 

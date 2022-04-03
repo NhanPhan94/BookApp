@@ -120,6 +120,24 @@ public class DBHelper extends SQLiteOpenHelper{
 
     }
 
+    public  Cursor getBookInfo(int id){
+        SQLiteDatabase MyDatabase = this.getWritableDatabase();
+        String query = "SELECT * FROM Book_Information INNER JOIN Users_Information" +
+                " ON Book_Information.Id= Users_Information.Id " +
+                "WHERE Book_Information.Id = " + id;
+        Cursor c = MyDatabase.rawQuery(query,null);
+        return c;
+    }
+
+    public Cursor getUserID(String username)
+    {
+        SQLiteDatabase MyDatabase = this.getWritableDatabase();
+        String query = "SELECT Users_Information.Id FROM Users_Information" +
+                " WHERE Username =" + username ;
+        Cursor c = MyDatabase.rawQuery(query,null);
+        return c;
+    }
+
     public UserProfile login (String username, String password){
         UserProfile userProfile = null;
         try{
