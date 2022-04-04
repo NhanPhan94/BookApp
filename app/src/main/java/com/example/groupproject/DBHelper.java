@@ -129,6 +129,35 @@ public class DBHelper extends SQLiteOpenHelper{
         return c;
     }
 
+    public Cursor viewNearbyBooks(String postalCode){
+        //public Cursor viewBookOwnerTest(){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+
+        //String queryTest = "SELECT Email from Users_Information where Username= ?";
+        //String queryTest = "SELECT * from Users_Information where Username="+ postalCode;
+        //String queryTest = "SELECT BookTitle, Email from Book_Information inner join " +
+        //" Users_Information on Book_Information.Id = Users_Information.Id";
+        String query = "SELECT BookTitle from Book_Information inner join " +
+                " Users_Information on Book_Information.Id = Users_Information.Id where Address= ?";
+        //Cursor c = sqLiteDatabase.rawQuery(queryTest,null);
+        Cursor c = sqLiteDatabase.rawQuery(query,new String[] {postalCode});
+
+        return c;
+    }
+
+    public Cursor viewBookOwner(String booktitle){
+        //public Cursor viewBookOwnerTest(){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+
+        //String queryTest = "SELECT Id from Users_Information";
+        //String queryTest = "SELECT BookTitle, Email from Book_Information inner join " +
+        //" Users_Information on Book_Information.Id = Users_Information.Id";
+        String query = "SELECT Email from Book_Information inner join " +
+                " Users_Information on Book_Information.Id = Users_Information.Id where BookTitle=?";
+        Cursor c = sqLiteDatabase.rawQuery(query,new String[] {booktitle});
+        return c;
+    }
+
     public Cursor getUserID(String username)
     {
         SQLiteDatabase MyDatabase = this.getWritableDatabase();

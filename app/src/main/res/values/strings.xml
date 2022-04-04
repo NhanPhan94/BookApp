@@ -66,6 +66,15 @@
     <string name="errorChange">Change profile got error</string>
     <string name="useExits">The user already exits</string>
     <string name="btnVIewBooks">View My Book Details</string>
+    <string name="txtPostalCode">Please enter the postal code below:</string>
+    <string name="hintPostalCode">Postal Code</string>
+    <string name="txtBtnFind">FIND</string>
+    <string name="txtOwnerPrompt">Click on the desired book to get the owner\'s contact:</string>
+    <string name="txtOwnerList">Owner Contact:</string>
+    <string name="btnPickup">REQUEST FOR PICK UP</string>
+    <string name="txtLeaveMessage">Please mention the pick up time:</string>
+    <string name="txtRequestOwner">Request Owner</string>
+
 
 
 </resources>

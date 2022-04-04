@@ -50,6 +50,14 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        Button borrowBook = (Button)findViewById(R.id.btnBorrow);
+        borrowBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Home.this, BorrowBook.class));
+            }
+        });
+
         btnEditProfile = findViewById(R.id.btnEditProfile);
         btnEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
