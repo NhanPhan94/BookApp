@@ -24,6 +24,7 @@ import entities.UserProfile;
 public class BookList extends AppCompatActivity implements ImageAdapter.ItemClickListener{
 
 
+    Integer[] bookIDs;
     String[] bookImages;
     String[] bookTitles;
     String[] bookStatus;
@@ -54,13 +55,15 @@ public class BookList extends AppCompatActivity implements ImageAdapter.ItemClic
         bookTitles = new String[c.getCount()];
         bookOwner = new String[c.getCount()];
         bookStatus = new String[c.getCount()];
+        bookIDs = new Integer[c.getCount()];
         if(c.getCount()>0 )
         {
             while (c.moveToNext()) {
-                bookImages[c.getPosition()] = c.getString(6);
+                bookImages[c.getPosition()] = c.getString(8);
+                bookIDs[c.getPosition()] = c.getInt(0);
                 bookTitles[c.getPosition()] = c.getString(1);
-                bookOwner[c.getPosition()] = c.getString(11);
-                bookStatus[c.getPosition()] = c.getString(7);
+                bookOwner[c.getPosition()] = c.getString(13);
+                bookStatus[c.getPosition()] = c.getString(9);
 
 
             }
@@ -71,25 +74,22 @@ public class BookList extends AppCompatActivity implements ImageAdapter.ItemClic
             startActivity(new Intent(BookList.this, Home.class));
         }
         imageID = new Integer[bookImages.length];
-//        Toast.makeText(BookList.this,
-//                bookTitles[0], Toast.LENGTH_SHORT).show();
 
+        for (int i = 0; i < bookImages.length; i++) {
 
-            for (int i = 0; i < bookImages.length; i++) {
+            try {
 
-                try {
-
-                    imageID[i] = getResId(bookImages[i], R.drawable.class);
-                    adapter = new ImageAdapter(this, imageID,bookTitles,bookStatus,bookOwner);
-                    adapter.setClickListener(this);
-                    recyclerView.setAdapter(adapter);
+                imageID[i] = getResId(bookImages[i], R.drawable.class);
+                adapter = new ImageAdapter(this, imageID,bookTitles,bookStatus,bookOwner,bookIDs);
+                adapter.setClickListener(this);
+                recyclerView.setAdapter(adapter);
 
 
 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+        }
 
 
 
@@ -97,7 +97,10 @@ public class BookList extends AppCompatActivity implements ImageAdapter.ItemClic
 
     @Override
     public void onItemClick(View view, int position) {
-        startActivity(new Intent(BookList.this, BookInfo.class));
+        Intent btnAddBookIntent = new Intent(BookList.this, BookInfo.class);
+        btnAddBookIntent.putExtra("userprofile",userprofile);
+        //btnAddBookIntent.putExtra("bookImage",adapter.getImage(position));
+        startActivity(btnAddBookIntent);
 
     }
 

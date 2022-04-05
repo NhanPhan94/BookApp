@@ -1,6 +1,7 @@
 package com.example.groupproject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -17,9 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ImageAdapter extends RecyclerView.Adapter {
 
 
-
     private Integer[] mData;
     private LayoutInflater inflater;
+    private Integer[] bookIDs;
     private String[] bookTitles;
     private String[] bookStatus;
     private String[] bookOwner;
@@ -27,12 +28,13 @@ public class ImageAdapter extends RecyclerView.Adapter {
 
 
     public ImageAdapter(Context context, Integer[] data, String[] bTitles,
-                        String[] bStatus, String[] bOwners){
+                        String[] bStatus, String[] bOwners,Integer[] bIDs){
         inflater = LayoutInflater.from(context);
         mData = data;
         bookTitles = bTitles;
         bookStatus = bStatus;
         bookOwner = bOwners;
+        bookIDs = bIDs;
     }
 
 
@@ -51,6 +53,7 @@ public class ImageAdapter extends RecyclerView.Adapter {
         ((ViewHolder)holder).lblBookName.setText(bookTitles[position]);
         ((ViewHolder)holder).lblBookStatus.setText(bookStatus[position]);
         ((ViewHolder)holder).lblBookOwner.setText("Owned By : " +bookOwner[position]);
+        ((ViewHolder)holder).lblBookID.setText(String.valueOf(bookIDs[position]));
 
         if(((ViewHolder)holder).lblBookStatus.getText().equals("Available"))
         {
@@ -71,7 +74,7 @@ public class ImageAdapter extends RecyclerView.Adapter {
         this.mClicListener = itemClickListener;
     }
 
-    Integer getItem(int id){
+    Integer getImage(int id){
         return mData[id];
     }
 
@@ -84,6 +87,7 @@ public class ImageAdapter extends RecyclerView.Adapter {
         TextView lblBookName;
         TextView lblBookStatus;
         TextView lblBookOwner;
+        TextView lblBookID;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -91,14 +95,26 @@ public class ImageAdapter extends RecyclerView.Adapter {
             lblBookName = itemView.findViewById(R.id.lblBookName);
             lblBookOwner = itemView.findViewById(R.id.lblBookOwner);
             lblBookStatus = itemView.findViewById(R.id.lblBookStatus);
+            lblBookID = itemView.findViewById(R.id.lblBookID);
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             if(mClicListener != null)
+            {
+                int position = getAdapterPosition();
                 mClicListener.onItemClick(v,getAdapterPosition());
+                Context context = v.getContext();
+                Intent intent = new Intent(context,BookInfo.class);
+                intent.putExtra("bookID",bookIDs[position].toString());
+                context.startActivity(intent);
+            }
+
+
         }
+
+
     }
 
     //inner interface
