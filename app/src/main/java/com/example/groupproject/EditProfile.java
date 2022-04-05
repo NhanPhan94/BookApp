@@ -27,12 +27,12 @@ public class EditProfile extends AppCompatActivity {
 
 
 
-        username = (EditText) findViewById(R.id.txtName);
-        email = (EditText) findViewById(R.id.txtEmailRes);
-        address = (EditText) findViewById(R.id.txtPostalCode);
-        age = (EditText) findViewById(R.id.txtAge);
-        interest = (Spinner) findViewById(R.id.spInterest);
-        password = (EditText) findViewById(R.id.txtPassword);
+        username = findViewById(R.id.txtName1);
+        email = findViewById(R.id.txtPastalCode1);
+        address = findViewById(R.id.txtPostalCode);
+        age =  findViewById(R.id.txtAge1);
+        interest = findViewById(R.id.spInterest);
+        password = findViewById(R.id.txtPassword1);
 
         loadData();
 

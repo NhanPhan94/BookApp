@@ -7,7 +7,7 @@
     tools:context=".Register">
 
     <EditText
-        android:id="@+id/txtName"
+        android:id="@+id/txtName1"
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:layout_marginStart="58dp"
@@ -41,7 +41,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/txtEmailRes"
+        android:id="@+id/txtPastalCode1"
         android:layout_width="323dp"
         android:layout_height="48dp"
         android:layout_marginStart="58dp"
@@ -53,10 +53,10 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+        app:layout_constraintTop_toBottomOf="@+id/txtName1" />
 
     <EditText
-        android:id="@+id/txtAge"
+        android:id="@+id/txtAge1"
         android:layout_width="323dp"
         android:layout_height="49dp"
         android:layout_marginStart="59dp"
@@ -92,12 +92,12 @@
         android:layout_marginBottom="15dp"
         android:text="@string/txtInterest"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtPassword"
+        app:layout_constraintBottom_toTopOf="@+id/txtPassword1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAge" />
+        app:layout_constraintTop_toBottomOf="@+id/txtAge1" />
 
     <EditText
-        android:id="@+id/txtPassword"
+        android:id="@+id/txtPassword1"
         android:layout_width="324dp"
         android:layout_height="48dp"
         android:layout_marginStart="59dp"
@@ -124,7 +124,7 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtPassword1"
         tools:ignore="TextContrastCheck" />
 
     <Button

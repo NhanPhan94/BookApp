@@ -8,7 +8,7 @@
     tools:context=".Register">
 
     <EditText
-        android:id="@+id/txtName"
+        android:id="@+id/txtName1"
         android:layout_width="match_parent"
         android:layout_height="69dp"
         android:layout_marginLeft="15dp"
@@ -32,7 +32,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/txtEmailRes"
+        android:id="@+id/txtPastalCode1"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginLeft="15dp"
@@ -43,7 +43,7 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/txtAge"
+        android:id="@+id/txtAge1"
         android:layout_width="match_parent"
         android:layout_height="59dp"
         android:layout_marginLeft="15dp"
@@ -72,7 +72,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/txtPassword"
+        android:id="@+id/txtPassword1"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_marginLeft="15dp"

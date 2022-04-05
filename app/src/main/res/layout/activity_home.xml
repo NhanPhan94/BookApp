@@ -60,14 +60,6 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/btnEditProfile"
-        android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:layout_marginBottom="15dp"
-        android:text="@string/btnChangeProfile"
-        android:textSize="20sp" />
-
-    <Button
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="51dp"
