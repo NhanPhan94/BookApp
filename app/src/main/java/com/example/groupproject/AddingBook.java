@@ -14,6 +14,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,7 +28,9 @@ public class AddingBook extends AppCompatActivity {
 
     int SELECT_PICTURE = 200;
     ImageView imgBook;
-    String borrowActivity = "";
+    String borrowActivityRent = "";
+    String borrowActivityShare = "";
+    String borrowActivityGiveaway = "";
     int userid;
     UserProfile userprofile;
 
@@ -45,8 +48,6 @@ public class AddingBook extends AppCompatActivity {
         CheckBox chkShare = (CheckBox) findViewById(R.id.chkShare);
         CheckBox chkRent = (CheckBox) findViewById(R.id.chkRent);
         CheckBox chkGiveAway = (CheckBox) findViewById(R.id.chkGiveaway);
-//        imgBook = (ImageView) findViewById(R.id.imgBook);
-//        final Button btnUpload = (Button) findViewById(R.id.btnUpdload);
 
         final Button btnAddBook = (Button) findViewById(R.id.btnAddBook);
         final Button btnCancel = (Button) findViewById(R.id.btnCancelAdd);
@@ -56,19 +57,14 @@ public class AddingBook extends AppCompatActivity {
         userid = userprofile.getUserId();
 
         DBHelper  dbHelper= new DBHelper(this);
+        txtRentPrice.setEnabled(false);
 
-
-
-//        btnUpload.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                imageChooser();
-//            }
-//        });
-
-
-
+        chkRent.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                txtRentPrice.setEnabled(true);
+            }
+        });
 
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -102,33 +98,67 @@ public class AddingBook extends AppCompatActivity {
 
                 if(chkShare.isChecked())
                 {
-                    borrowActivity = "Share";
+                    borrowActivityShare = "Yes";
                 }
-                else if(chkRent.isChecked())
+                else {
+                    borrowActivityShare = "No";
+                }
+                if(chkRent.isChecked())
                 {
-                    borrowActivity = "Rent";
+                    borrowActivityRent = "Yes";
 
-                }
-                else if(chkGiveAway.isChecked())
-                {
-                    borrowActivity = "GiveAway";
-
-                }
-
-                Boolean insert = dbHelper.insertBookData(bookTitle,author,publisher,publicationYear,borrowActivity,bookImageName,"Available",rentPrice,userid);
-                if(insert==true){
-                    Toast.makeText(AddingBook.this,"Book is Successfully Added", Toast.LENGTH_SHORT).show();
-                    Intent addBookIntent = new Intent(AddingBook.this, Home.class);
-                    addBookIntent.putExtra("userprofile",userprofile);
-                    startActivity(addBookIntent);
                 }
                 else{
-
-                    Toast.makeText(AddingBook.this,"Book is not added. Please try again.", Toast.LENGTH_SHORT).show();
-                    Intent addBookIntent = new Intent(AddingBook.this, Home.class);
-                    addBookIntent.putExtra("userprofile",userprofile);
-                    startActivity(addBookIntent);
+                    borrowActivityRent = "No";
                 }
+                if(chkGiveAway.isChecked())
+                {
+                    borrowActivityGiveaway = "Yes";
+
+                }
+                else {
+                    borrowActivityGiveaway = "No";
+                }
+
+                if(bookTitle.equals("") || author.equals("") || bookImageName.equals(""))
+                {
+                    Toast.makeText(AddingBook.this,"Please enter details to all the required fields", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    if(!chkShare.isChecked() && !chkRent.isChecked() && !chkGiveAway.isChecked())
+                    {
+                        Toast.makeText(AddingBook.this,"Please Select at least one borrow activity ", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        if(chkRent.isChecked() && rentPrice==0)
+                        {
+                            Toast.makeText(AddingBook.this,"Please Enter the rent amount", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            Boolean insert = dbHelper.insertBookData(bookTitle,author,publisher,publicationYear,borrowActivityShare,borrowActivityRent,
+                                    borrowActivityGiveaway,bookImageName,"Available",rentPrice,userid);
+                            if(insert==true){
+                                Toast.makeText(AddingBook.this,"Book is Successfully Added", Toast.LENGTH_SHORT).show();
+                                Intent addBookIntent = new Intent(AddingBook.this, Home.class);
+                                addBookIntent.putExtra("userprofile",userprofile);
+                                startActivity(addBookIntent);
+                            }
+                            else{
+
+                                Toast.makeText(AddingBook.this,"Book is not added. Please try again.", Toast.LENGTH_SHORT).show();
+                                Intent addBookIntent = new Intent(AddingBook.this, Home.class);
+                                addBookIntent.putExtra("userprofile",userprofile);
+                                startActivity(addBookIntent);
+                            }
+                        }
+                    }
+                }
+
+
+
+
 
 
             }
@@ -136,42 +166,4 @@ public class AddingBook extends AppCompatActivity {
 
 
     }
-
-
-//    public void imageChooser(){
-//
-//        // create an instance of the intent of the type image
-//        Intent i = new Intent();
-//        i.setType("image/*");
-//        i.setAction(Intent.ACTION_GET_CONTENT);
-//
-//        // pass the constant to compare it with the returned requestCode
-//        startActivityForResult(Intent.createChooser(i, "Select Picture"), SELECT_PICTURE);
-//
-//    }
-//    // this function is triggered when user selects the image from the imageChooser
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        if (resultCode == RESULT_OK) {
-//
-//            // compare the resultCode with the
-//            // SELECT_PICTURE constant
-//            if (requestCode == SELECT_PICTURE) {
-//                // Get the url of the image from data
-//                Uri selectedImageUri = data.getData();
-//                if (null != selectedImageUri) {
-//                    // update the preview image in the layout
-//                    imgBook.setImageURI(selectedImageUri);
-//                }
-//            }
-//        }
-//    }
-//
-//    public Uri getImageUri(Context inContext, Bitmap inImage) {
-//        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-//        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-//        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
-//        return Uri.parse(path);
-//    }
 }

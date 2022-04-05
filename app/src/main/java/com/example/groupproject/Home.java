@@ -5,14 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import entities.UserProfile;
 
 public class Home extends AppCompatActivity {
         private TextView welcomeText;
-        private Button btnViewProfile, btnlogout, btnViewBooks, addBook;
+        private Button btnEditProfile, btnViewProfile, btnlogout, btnViewBooks, addBook;
         private UserProfile userprofile;
         private Session session;
     @Override
@@ -27,7 +29,7 @@ public class Home extends AppCompatActivity {
         userprofile = (UserProfile) intent.getSerializableExtra("userprofile");
         welcomeText.setText("Welcome " + userprofile.getUsername());
 
-        addBook = findViewById(R.id.btnAddUpdate);
+        addBook = (Button)findViewById(R.id.btnAddUpdate);
         addBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +50,17 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        btnEditProfile = findViewById(R.id.btnEditProfile);
+        btnEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent btnEditIntent = new Intent(Home.this, EditProfile.class);
 
+                btnEditIntent.putExtra("userprofile",userprofile);
+
+                startActivity(btnEditIntent);
+            }
+        });
 
         session = new Session(this);
         if (!session.loggedin()) {

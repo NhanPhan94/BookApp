@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupProject">
         <activity
+            android:name=".OwnerContact"
+            android:exported="false" />
+        <activity
+            android:name=".ListBooks"
+            android:exported="false" />
+        <activity
+            android:name=".BorrowBook"
+            android:exported="false" />
+        <activity
             android:name=".ViewProfile"
             android:exported="false" />
         <activity
