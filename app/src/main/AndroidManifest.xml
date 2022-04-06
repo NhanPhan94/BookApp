@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupProject">
         <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
             android:name=".OwnerContact"
             android:exported="false" />
         <activity
@@ -46,7 +49,7 @@
             android:name=".BookList"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
