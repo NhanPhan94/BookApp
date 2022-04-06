@@ -23,14 +23,14 @@
     <string name="btnCancel">Cancel</string>
     <string name="btnCreateAccount">Create a Account</string>
     <string name="btnLogin">Login</string>
-    <string name="btnAdd">Add/Update a book</string>
+    <string name="btnAdd">Add a book</string>
     <string name="btnBorrow">Borrow a book</string>
     <string name="btnReading">Reading tracker</string>
-    <string name="txtAddingbook">Adding Book</string>
+    <string name="txtAddingbook">Add a Book</string>
     <string name="txtBooktitle">Book Title</string>
     <string name="txtAuthor">Author name</string>
     <string name="txtPublisher">Publisher name</string>
-    <string name="txtPulication">Pulication year</string>
+    <string name="txtPulication">Publication year</string>
     <string name="lblShare">Share</string>
     <string name="lblgiveaway">Give a way</string>
     <string name="lblRent">Rent</string>

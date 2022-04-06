@@ -15,8 +15,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ImageAdapter extends RecyclerView.Adapter {
+import entities.UserProfile;
 
+public class ImageAdapter extends RecyclerView.Adapter {
 
     private Integer[] mData;
     private LayoutInflater inflater;
@@ -25,7 +26,7 @@ public class ImageAdapter extends RecyclerView.Adapter {
     private String[] bookStatus;
     private String[] bookOwner;
     private ItemClickListener mClicListener;
-
+    UserProfile userprofile;
 
     public ImageAdapter(Context context, Integer[] data, String[] bTitles,
                         String[] bStatus, String[] bOwners,Integer[] bIDs){
@@ -36,7 +37,6 @@ public class ImageAdapter extends RecyclerView.Adapter {
         bookOwner = bOwners;
         bookIDs = bIDs;
     }
-
 
 
     @NonNull
@@ -78,8 +78,6 @@ public class ImageAdapter extends RecyclerView.Adapter {
         return mData[id];
     }
 
-
-
     //inner class
     public class ViewHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener{
@@ -105,10 +103,6 @@ public class ImageAdapter extends RecyclerView.Adapter {
             {
                 int position = getAdapterPosition();
                 mClicListener.onItemClick(v,getAdapterPosition());
-                Context context = v.getContext();
-                Intent intent = new Intent(context,BookInfo.class);
-                intent.putExtra("bookID",bookIDs[position].toString());
-                context.startActivity(intent);
             }
 
 

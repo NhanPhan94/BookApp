@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.database.Cursor;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
@@ -31,6 +33,7 @@ public class BookList extends AppCompatActivity implements ImageAdapter.ItemClic
     String[] bookOwner;
     Integer[] imageID;
     ImageAdapter adapter;
+
     int userid;
     UserProfile userprofile;
     @Override
@@ -38,11 +41,14 @@ public class BookList extends AppCompatActivity implements ImageAdapter.ItemClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_list);
 
+        setTitle("Book Information");
+
         DBHelper  dbHelper= new DBHelper(this);
         RecyclerView recyclerView = findViewById(R.id.recylcerView);
         Intent intent = getIntent();
         userprofile = (UserProfile) intent.getSerializableExtra("userprofile");
         userid = userprofile.getUserId();
+        Integer[] coverBook ={R.drawable.coverbook};
 
         int numOfCol = 1;
         recyclerView.setLayoutManager(new GridLayoutManager(this,numOfCol));
@@ -64,8 +70,6 @@ public class BookList extends AppCompatActivity implements ImageAdapter.ItemClic
                 bookTitles[c.getPosition()] = c.getString(1);
                 bookOwner[c.getPosition()] = c.getString(13);
                 bookStatus[c.getPosition()] = c.getString(9);
-
-
             }
         }
         else{
@@ -92,13 +96,14 @@ public class BookList extends AppCompatActivity implements ImageAdapter.ItemClic
         }
 
 
-
     }
 
     @Override
     public void onItemClick(View view, int position) {
+
         Intent btnAddBookIntent = new Intent(BookList.this, BookInfo.class);
         btnAddBookIntent.putExtra("userprofile",userprofile);
+        btnAddBookIntent.putExtra("bookID",bookIDs[position].toString());
         //btnAddBookIntent.putExtra("bookImage",adapter.getImage(position));
         startActivity(btnAddBookIntent);
 

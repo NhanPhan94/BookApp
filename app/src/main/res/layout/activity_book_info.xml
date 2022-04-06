@@ -6,145 +6,124 @@
     android:layout_height="match_parent"
     tools:context=".BookInfo">
 
-    <TextView
-        android:id="@+id/txtTitleBookInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="42dp"
-        android:text="@string/txtAdvanceSearch"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imgBookLarge"
         android:layout_width="193dp"
         android:layout_height="210dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="72dp"
         android:contentDescription="@string/txtContentImages"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelInfo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitleBookInfo"
-        app:srcCompat="@drawable/coverbook" />
+        app:layout_constraintTop_toBottomOf="@+id/txtBookNameInfo"
+        app:layout_constraintVertical_bias="0.079" />
 
     <TextView
         android:id="@+id/txtBookNameInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="117dp"
-        android:layout_marginBottom="9dp"
-        android:text="@string/txtBookName"
-        android:textSize="19sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtBy"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitleBookInfo" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtBy"
-        android:layout_width="31dp"
-        android:layout_height="15dp"
-        android:layout_marginTop="9dp"
-        android:text="@string/txtBy"
-        android:textSize="11sp"
-        android:textStyle="normal"
-        app:autoSizeTextType="uniform"
+        android:id="@+id/txtPublicationYearInfo"
+        android:layout_width="180dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="96dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBookNameInfo" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgBookLarge"
+        app:layout_constraintTop_toBottomOf="@+id/txtPublisherInfo" />
+
+    <TextView
+        android:id="@+id/txtBookStatusInfo"
+        android:layout_width="180dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="23dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgBookLarge"
+        app:layout_constraintTop_toBottomOf="@+id/txtPriceInfo" />
+
+    <TextView
+        android:id="@+id/txtPublisherInfo"
+        android:layout_width="180dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="80dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgBookLarge"
+        app:layout_constraintTop_toBottomOf="@+id/txtAuthorInfo" />
 
     <TextView
         android:id="@+id/txtAuthorInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="133dp"
-        android:layout_marginBottom="18dp"
-        android:text="@string/txtAuthor"
-        android:textSize="11sp"
-        android:textStyle="normal"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/txtBookStatus"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/txtBookStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="123dp"
-        android:text="@string/txtStatus"
-        android:textSize="17sp"
+        android:layout_width="180dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="80dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBy" />
-
-    <TextView
-        android:id="@+id/txtPublisher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="96dp"
-        android:text="@string/txtPublisher"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBookStatus" />
-
-    <TextView
-        android:id="@+id/txtYear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="102dp"
-        android:text="@string/txtPulication"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPublisher" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgBookLarge"
+        app:layout_constraintTop_toBottomOf="@+id/txtBookNameInfo" />
 
     <TextView
         android:id="@+id/txtPriceInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="166dp"
-        android:text="@string/txtPrice"
-        android:textSize="17sp"
+        android:layout_width="180dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtYear" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgBookLarge"
+        app:layout_constraintTop_toBottomOf="@+id/txtPublicationYearInfo" />
 
     <Button
-        android:id="@+id/btnAddToCart"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnCancelInfo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="31dp"
-        android:text="@string/btnAddToCard"
+        android:layout_marginTop="8dp"
+        android:text="@string/btnCancel"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdateInfo" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnUpdateInfo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="97dp"
-        android:layout_marginEnd="48dp"
-        android:text="@string/btnForBorrow"
+        android:layout_marginTop="76dp"
+        android:text="@string/btnUpdate"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtYear" />
-
-    <TextView
-        android:id="@+id/txtPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="306dp"
-        android:layout_marginEnd="163dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBookStatusInfo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
