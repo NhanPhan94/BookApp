@@ -75,6 +75,11 @@
     <string name="txtLeaveMessage">Please mention the pick up time:</string>
     <string name="txtRequestOwner">Request Owner</string>
     <string name="txtWelcome">Welcome to BookBiz!</string>
-
-
+    <string name="btnPrevious">Previous</string>
+    <string name="empty_imageview">No_Data</string>
+    <string name="readmsgbtn">Read Message</string>
+    <string name="sendMsgbtn">Send Message</string>
+    <string name="usernamemsgtxtfield">To: </string>
+    <string name="sendMsgtxthint">Type message ...</string>
+    <string name="btnmsgcheck">Messaging</string>
 </resources>

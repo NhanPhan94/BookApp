@@ -13,6 +13,18 @@
             android:name=".Register"
             android:exported="false" />
         <activity
+            android:name=".SendMessage"
+            android:exported="false" />
+        <activity
+            android:name=".Messaging"
+            android:exported="false" />
+        <activity
+            android:name=".CustomAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".ReadingTracker"
+            android:exported="false" />
+        <activity
             android:name=".OwnerContact"
             android:exported="false" />
         <activity

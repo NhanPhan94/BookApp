@@ -14,7 +14,7 @@ import entities.UserProfile;
 
 public class Home extends AppCompatActivity {
         private TextView welcomeText;
-        private Button btnEditProfile, btnViewProfile, btnlogout, btnViewBooks, addBook;
+        private Button btnReadingTracker, btnViewProfile, btnlogout, btnViewBooks, addBook, btnMess;
         private UserProfile userprofile;
         private Session session;
     @Override
@@ -50,17 +50,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        btnEditProfile = findViewById(R.id.btnEditProfile);
-        btnEditProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent btnEditIntent = new Intent(Home.this, EditProfile.class);
 
-                btnEditIntent.putExtra("userprofile",userprofile);
-
-                startActivity(btnEditIntent);
-            }
-        });
 
         session = new Session(this);
         if (!session.loggedin()) {
@@ -85,7 +75,26 @@ public class Home extends AppCompatActivity {
 
             }
         });
+        btnReadingTracker = findViewById(R.id.btnReadingTracker);
+        btnReadingTracker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent btnReadingTracker = new Intent(Home.this, ReadingTracker.class);
+                btnReadingTracker.putExtra("userprofile",userprofile);
+                startActivity(btnReadingTracker);
+            }
+        });
+        btnMess = findViewById(R.id.btnCheckmsg);
+        btnMess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent btnCheckmsg = new Intent(Home.this, Messaging.class);
+                btnCheckmsg.putExtra("userprofile",userprofile );
+                startActivity(btnCheckmsg);
+            }
+        });
     }
+
     private void logout(){
         session.setLoggedin(false);
         startActivity(new Intent(Home.this,Login.class));

@@ -21,6 +21,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import entities.UserProfile;
 
@@ -33,6 +35,11 @@ public class AddingBook extends AppCompatActivity {
     String borrowActivityGiveaway = "";
     int userid;
     UserProfile userprofile;
+
+    //To track the date user add book
+    Calendar calendarTrack = Calendar.getInstance();
+    SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss a");
+    String dateTrack = df.format(calendarTrack.getTime());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,7 +145,7 @@ public class AddingBook extends AppCompatActivity {
                         else
                         {
                             Boolean insert = dbHelper.insertBookData(bookTitle,author,publisher,publicationYear,borrowActivityShare,borrowActivityRent,
-                                    borrowActivityGiveaway,bookImageName,"Available",rentPrice,userid);
+                                    borrowActivityGiveaway,bookImageName,"Available",rentPrice,userid,dateTrack);
                             if(insert==true){
                                 Toast.makeText(AddingBook.this,"Book is Successfully Added", Toast.LENGTH_SHORT).show();
                                 Intent addBookIntent = new Intent(AddingBook.this, Home.class);

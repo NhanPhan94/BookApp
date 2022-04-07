@@ -15,6 +15,7 @@ public class DBHelper extends SQLiteOpenHelper{
     final static int DATABASE_VERSION = 3;
     final static String TABLE1_NAME = "Users_Information";
     final static String TABLE2_NAME = "Book_Information";
+    final static String TABLE3_NAME = "Message_Information";
     final static String T1COL1 = "Id";
     final static String T1COL2 = "Username";
     final static String T1COL3 = "Email";
@@ -58,13 +59,16 @@ public class DBHelper extends SQLiteOpenHelper{
 //                "FOREIGN KEY(" + T1COL1 + ") REFERENCES " +TABLE1_NAME+"("+T1COL1 + ")"+
 //                ");";
 
-            MyDatabase.execSQL(query1);
+        MyDatabase.execSQL(query1);
+
         MyDatabase.execSQL("create Table Book_Information(bookID Integer primary key, bookTitle TEXT, authorName TEXT, " +
                 "publisherName TEXT, publicationYear TEXT, borrowActivityShare TEXT,borrowActivityRent TEXT,borrowActivityGiveAway TEXT," +
-                "bookImageName TEXT, bookStatus TEXT, rentPrice REAL, Id Integer," +
+                "bookImageName TEXT, bookStatus TEXT, rentPrice REAL, Id Integer, dateAdded TEXT," +
                 " foreign key(Id) REFERENCES Users_Information(Id))");
 
-
+        MyDatabase.execSQL("CREATE TABLE Message_Information(messgeID Integer PRIMARY KEY, userName Text, messContent Text," +
+                " Id Integer," +
+                " FOREIGN KEY(Id) REFERENCES Users_Information(Id))");
 
     }
 
@@ -72,6 +76,7 @@ public class DBHelper extends SQLiteOpenHelper{
     public void onUpgrade(SQLiteDatabase MyDatabase, int oldVersion, int newVersion) {
         MyDatabase.execSQL("DROP TABLE " + TABLE1_NAME);
         MyDatabase.execSQL("DROP TABLE " + TABLE2_NAME);
+        MyDatabase.execSQL("DROP TABLE " + TABLE3_NAME);
         onCreate(MyDatabase);
     }
 
@@ -96,7 +101,8 @@ public class DBHelper extends SQLiteOpenHelper{
     }
 
     public Boolean insertBookData(String bookTitle, String authorName, String publisherName, String publicationYear,
-                                  String borrowActivityShare,String borrowActivityRent,String borrowActivityGiveaway, String imgURL,String bookStatus,Float rentPrice, int userId){
+                                  String borrowActivityShare,String borrowActivityRent,String borrowActivityGiveaway,
+                                  String imgURL,String bookStatus,Float rentPrice, int userId, String dateAdded){
         SQLiteDatabase MyDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("bookTitle",bookTitle);
@@ -110,6 +116,8 @@ public class DBHelper extends SQLiteOpenHelper{
         contentValues.put("bookStatus",bookStatus);
         contentValues.put("rentPrice",rentPrice);
         contentValues.put("Id",userId);
+        contentValues.put("dateAdded", dateAdded);
+
 
         long result = MyDatabase.insert("Book_Information",null,contentValues);
 
@@ -122,6 +130,26 @@ public class DBHelper extends SQLiteOpenHelper{
         }
 
     }
+    public Boolean insertMessData(String username, String msg, int id){
+        SQLiteDatabase MyDatabase = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("userName",username);
+        values.put("messContent",msg);
+        values.put("Id",id);
+
+
+        long result = MyDatabase.insert(TABLE3_NAME,null, values);
+
+        if(result==-1){
+            return false;
+        }
+        else{
+
+            return true;
+        }
+
+    }
+
 
     public  Cursor getBookInfo(int id){
         SQLiteDatabase MyDatabase = this.getWritableDatabase();
@@ -165,6 +193,14 @@ public class DBHelper extends SQLiteOpenHelper{
 
     }
 
+    public  Cursor getSender(){
+        SQLiteDatabase MyDatabase = this.getWritableDatabase();
+        String query = "SELECT * FROM Users_Information INNER JOIN Message_Information" +
+                " ON Users_Information.Id = Message_Information.Id";
+        Cursor c = MyDatabase.rawQuery(query,null);
+        return c;
+    }
+
     public Cursor viewNearbyBooks(String postalCode){
         //public Cursor viewBookOwnerTest(){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
@@ -193,6 +229,8 @@ public class DBHelper extends SQLiteOpenHelper{
         Cursor c = sqLiteDatabase.rawQuery(query,new String[] {booktitle});
         return c;
     }
+
+
 
     public Cursor getUserID(String username)
     {
@@ -271,6 +309,16 @@ public class DBHelper extends SQLiteOpenHelper{
         }
         return userProfile;
     }
+    Cursor readOwnerData(int id){
+        String query = "SELECT * FROM " + TABLE2_NAME + " WHERE id = ?";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, new String[]{String.valueOf(id)});
+        }
+        return cursor;
+    }
 
     public Boolean checkusername(String username){
         SQLiteDatabase MyDatabase = this.getWritableDatabase();
@@ -316,6 +364,19 @@ public class DBHelper extends SQLiteOpenHelper{
         }
 
     }
+
+    Cursor getMess(String user){
+        String query = "SELECT * FROM " + TABLE3_NAME+ " WHERE username = ?";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, new String[]{String.valueOf(user)});
+        }
+        return cursor;
+    }
+
+
 
 
 }

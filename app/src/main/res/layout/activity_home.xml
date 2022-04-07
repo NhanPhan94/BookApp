@@ -60,6 +60,14 @@
         android:textSize="20sp" />
 
     <Button
+        android:id="@+id/btnCheckmsg"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/btnmsgcheck"
+        android:textSize="20sp" />
+
+    <Button
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="51dp"

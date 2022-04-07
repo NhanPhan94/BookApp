@@ -68,7 +68,7 @@ public class BookList extends AppCompatActivity implements ImageAdapter.ItemClic
                 bookImages[c.getPosition()] = c.getString(8);
                 bookIDs[c.getPosition()] = c.getInt(0);
                 bookTitles[c.getPosition()] = c.getString(1);
-                bookOwner[c.getPosition()] = c.getString(13);
+                bookOwner[c.getPosition()] = c.getString(14);
                 bookStatus[c.getPosition()] = c.getString(9);
             }
         }
