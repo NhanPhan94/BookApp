@@ -50,7 +50,15 @@ public class Home extends AppCompatActivity {
             }
         });
 
-
+        Button borrowBook = (Button)findViewById(R.id.btnBorrow);
+        borrowBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent btnBorrowBookIntent = new Intent(Home.this, BorrowBook.class);
+                btnBorrowBookIntent.putExtra("userprofile",userprofile);
+                startActivity(btnBorrowBookIntent);
+            }
+        });
 
         session = new Session(this);
         if (!session.loggedin()) {

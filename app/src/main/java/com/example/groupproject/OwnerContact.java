@@ -1,8 +1,11 @@
 package com.example.groupproject;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -11,13 +14,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
+import entities.UserProfile;
+
 public class OwnerContact extends AppCompatActivity {
+    UserProfile userprofile;
     DBHelper myDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner_contact);
 
+        Intent intent = getIntent();
+        userprofile = (UserProfile) intent.getSerializableExtra("userprofile");
+
+        Button btnRequestOwner = (Button) findViewById(R.id.btnRequestOwner);
         ListView listView = (ListView) findViewById(R.id.ListOwnerContact);
         Bundle bundle = getIntent().getExtras();
         myDatabase = new DBHelper(this);
@@ -56,6 +66,30 @@ public class OwnerContact extends AppCompatActivity {
                         "Sorry, owner's contact information is not available", Toast.LENGTH_SHORT).show();
             }
         }
+
+        //btnRequestOwner = findViewById(R.id.btnCheckmsg);
+        btnRequestOwner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               /* Intent btnRequestOwnermsg = new Intent(OwnerContact.this, Messaging.class);
+                btnRequestOwnermsg.putExtra("userprofile",userprofile );
+                startActivity(btnRequestOwnermsg);*/
+                Intent requestOwnermsgScreen = new Intent(getApplicationContext(), Messaging.class);
+                requestOwnermsgScreen.putExtra("userprofile", userprofile);
+                OwnerContact.this.startActivity(requestOwnermsgScreen);
+               // startActivity(new Intent(OwnerContact.this, Messaging.class));
+            }
+        });
+
+        /*btnRequestOwner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent btnRequestOwnerIntent = new Intent(OwnerContact.this, Messaging.class);
+                btnRequestOwnerIntent.putExtra("userprofile",userprofile);
+                startActivity(btnRequestOwnerIntent);
+                //startActivity(new Intent(OwnerContact.this, Messaging.class));
+            }
+        });*/
 
         }
 }

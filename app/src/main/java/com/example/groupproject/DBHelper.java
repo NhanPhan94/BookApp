@@ -224,7 +224,35 @@ public class DBHelper extends SQLiteOpenHelper{
         return c;
     }
 
-    public Cursor viewNearbyBooks(String postalCode){
+    public Cursor viewNearByAvailableBooks(String postalCode, String borrowActivity){
+        String borrowFlag= "Yes";
+        String borrowActivityQuery="";
+        //public Cursor viewBookOwnerTest(){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+
+       /* borrowActivityQuery = "SELECT BookTitle from Book_Information inner join " +
+                " Users_Information on Book_Information.Id = Users_Information.Id where Address=? AND borrowActivityGiveAway=?";*/
+
+        if(borrowActivity.equalsIgnoreCase("Share") ){
+            borrowActivityQuery = "SELECT BookTitle from Book_Information inner join " +
+                    " Users_Information on Book_Information.Id = Users_Information.Id where Address=? AND borrowActivityShare=?";
+        }else if(borrowActivity.equalsIgnoreCase("Rent") ){
+            borrowActivityQuery = "SELECT BookTitle from Book_Information inner join " +
+                    " Users_Information on Book_Information.Id = Users_Information.Id where Address=? AND borrowActivityRent=?";
+        }else if (borrowActivity.equalsIgnoreCase("Give Away") ){
+            borrowActivityQuery = "SELECT BookTitle from Book_Information inner join " +
+                    " Users_Information on Book_Information.Id = Users_Information.Id where Address=? AND borrowActivityGiveAway=?";
+        }
+        //Cursor c = sqLiteDatabase.rawQuery(queryTest,null);
+        //Cursor c = sqLiteDatabase.rawQuery(borrowActivityQuery,new String[] {postalCode,borrowFlag});
+        Cursor c = sqLiteDatabase.rawQuery(borrowActivityQuery,new String[] {postalCode,borrowFlag});
+        //"SELECT * FROM " + DatabaseHelper.TABLE_NAME +" WHERE " + DatabaseHelper.COL_2 + "=? AND " + DatabaseHelper.COL_4 + "=? "
+        //String query = "SELECT * FROM " + DatabaseHelper.TABLE_NAME + " WHERE " + DatabaseHelper.COL_2 + "=? AND " + DatabaseHelper.COL_4 + "=? ";
+
+        return c;
+    }
+
+    /*public Cursor viewNearbyBooks(String postalCode){
         //public Cursor viewBookOwnerTest(){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
 
@@ -238,7 +266,7 @@ public class DBHelper extends SQLiteOpenHelper{
         Cursor c = sqLiteDatabase.rawQuery(query,new String[] {postalCode});
 
         return c;
-    }
+    }*/
 
     public Cursor viewBookOwner(String booktitle){
         //public Cursor viewBookOwnerTest(){
@@ -247,7 +275,7 @@ public class DBHelper extends SQLiteOpenHelper{
         //String queryTest = "SELECT Id from Users_Information";
         //String queryTest = "SELECT BookTitle, Email from Book_Information inner join " +
         //" Users_Information on Book_Information.Id = Users_Information.Id";
-        String query = "SELECT Email from Book_Information inner join " +
+        String query = "SELECT Username from Book_Information inner join " +
                 " Users_Information on Book_Information.Id = Users_Information.Id where BookTitle=?";
         Cursor c = sqLiteDatabase.rawQuery(query,new String[] {booktitle});
         return c;

@@ -90,4 +90,8 @@
     <string name="btnViewOweBook">View your book</string>
     <string name="btnViewBooktracker">View Book Tracker</string>
     <string name="btnAddBookTracer">Add Book Tracker</string>
+    <string name="txtRdBtnShare">Share</string>
+    <string name="txtRdBtnRent">Rent</string>
+    <string name="txtRdBtnGiveAway">Give Away</string>
+
 </resources>
