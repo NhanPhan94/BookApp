@@ -11,7 +11,7 @@ import entities.UserProfile;
 
 public class DBHelper extends SQLiteOpenHelper{
 
-    public static final String DBNAME = "BookSharing1.db";
+    public static final String DBNAME = "BookSharing.db";
     final static int DATABASE_VERSION = 3;
     final static String TABLE1_NAME = "Users_Information";
     final static String TABLE2_NAME = "Book_Information";
@@ -130,6 +130,39 @@ public class DBHelper extends SQLiteOpenHelper{
                 "WHERE Book_Information.Id = " + id;
         Cursor c = MyDatabase.rawQuery(query,null);
         return c;
+    }
+
+    public  Cursor getSingleBookInfo(int bookID){
+        SQLiteDatabase MyDatabase = this.getWritableDatabase();
+        String query = "SELECT * FROM Book_Information WHERE bookID=" + bookID;
+        Cursor c = MyDatabase.rawQuery(query,null);
+        return c;
+    }
+
+    public Boolean updateBookData(int bookID,String bookTitle, String authorName, String publisherName, String publicationYear,
+                                  String borrowActivityShare,String borrowActivityRent,String borrowActivityGiveaway,
+                                  String imgURL,String bookStatus,Float rentPrice){
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("bookTitle",bookTitle);
+        contentValues.put("authorName",authorName);
+        contentValues.put("publisherName",publisherName);
+        contentValues.put("publicationYear",publicationYear);
+        contentValues.put("borrowActivityShare",borrowActivityShare);
+        contentValues.put("borrowActivityRent",borrowActivityRent);
+        contentValues.put("borrowActivityGiveaway",borrowActivityGiveaway);
+        contentValues.put("bookImageName",imgURL);
+        contentValues.put("bookStatus",bookStatus);
+        contentValues.put("rentPrice",rentPrice);
+
+        int u = sqLiteDatabase.update("Book_Information",contentValues,"bookID=?",
+                new String[]{Integer.toString(bookID)});
+        if(u>0)
+            return true;
+        else
+            return false;
+
     }
 
     public Cursor viewNearbyBooks(String postalCode){
