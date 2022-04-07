@@ -79,7 +79,7 @@ public class Home extends AppCompatActivity {
         btnReadingTracker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent btnReadingTracker = new Intent(Home.this, ReadingTracker.class);
+                Intent btnReadingTracker = new Intent(Home.this, TrackerOptional.class);
                 btnReadingTracker.putExtra("userprofile",userprofile);
                 startActivity(btnReadingTracker);
             }

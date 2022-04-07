@@ -7,7 +7,7 @@
     tools:context=".AddingBook">
 
     <TextView
-        android:id="@+id/txtAddingbook"
+        android:id="@+id/txtBookTracker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtBookTitle"
+        android:id="@+id/txtBookName"
         android:layout_width="292dp"
         android:layout_height="48dp"
         android:layout_marginStart="68dp"
@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddingbook"
+        app:layout_constraintTop_toBottomOf="@+id/txtBookTracker"
         tools:ignore="TextContrastCheck" />
 
     <EditText
@@ -50,11 +50,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPublisherName"
+        app:layout_constraintTop_toBottomOf="@+id/txtDate"
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/txtAuthor"
+        android:id="@+id/txtPageNum"
         android:layout_width="292dp"
         android:layout_height="48dp"
         android:layout_marginStart="68dp"
@@ -67,11 +67,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBookTitle"
+        app:layout_constraintTop_toBottomOf="@+id/txtBookName"
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/txtPublisherName"
+        android:id="@+id/txtDate"
         android:layout_width="292dp"
         android:layout_height="48dp"
         android:layout_marginStart="68dp"
@@ -84,7 +84,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAuthor"
+        app:layout_constraintTop_toBottomOf="@+id/txtPageNum"
         tools:ignore="TextContrastCheck" />
 
     <CheckBox
@@ -124,7 +124,7 @@
         app:layout_constraintTop_toBottomOf="@+id/chkRent" />
 
     <Button
-        android:id="@+id/btnCancelAdd"
+        android:id="@+id/btnCancelSub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
@@ -133,11 +133,11 @@
         android:text="@string/btnCancel"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnAddBook"
+        app:layout_constraintEnd_toStartOf="@+id/btnSubmit"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnAddBook"
+        android:id="@+id/btnSubmit"
         android:layout_width="114dp"
         android:layout_height="49dp"
         android:layout_marginStart="28dp"
@@ -147,7 +147,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnCancelAdd" />
+        app:layout_constraintStart_toEndOf="@+id/btnCancelSub" />
 
     <EditText
         android:id="@+id/txtRentPrice"
@@ -176,6 +176,6 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPublisherName" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

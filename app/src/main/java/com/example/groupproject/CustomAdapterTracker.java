@@ -15,20 +15,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
+public class CustomAdapterTracker extends RecyclerView.Adapter<CustomAdapterTracker.MyViewHolder> {
 
     private Context context;
     private Activity activity;
-    private ArrayList book_id, book_title, book_author, public_year;
+    private ArrayList track_id, book_name, page_num, pulish_date;
 
-    CustomAdapter(Activity activity, Context context, ArrayList book_id, ArrayList book_title, ArrayList book_author,
-                  ArrayList public_year){
+    CustomAdapterTracker(Activity activity, Context context, ArrayList track_id, ArrayList book_name, ArrayList page_num,
+                         ArrayList publish_date){
         this.activity = activity;
         this.context = context;
-        this.book_id = book_id;
-        this.book_title = book_title;
-        this.book_author = book_author;
-        this.public_year = public_year;
+        this.track_id = track_id;
+        this.book_name = book_name;
+        this.page_num = page_num;
+        this.pulish_date = publish_date;
     }
 
     @NonNull
@@ -42,10 +42,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.book_id_txt.setText(String.valueOf(book_id.get(position)));
-        holder.book_title_txt.setText(String.valueOf(book_title.get(position)));
-        holder.book_author_txt.setText(String.valueOf(book_author.get(position)));
-        holder.public_time_txt.setText(String.valueOf(public_year.get(position)));
+        holder.book_id_txt.setText(String.valueOf(track_id.get(position)));
+        holder.book_title_txt.setText(String.valueOf(book_name.get(position)));
+        holder.page_num_txt.setText(String.valueOf(page_num.get(position)));
+        holder.public_time_txt.setText(String.valueOf(pulish_date.get(position)));
         //Recyclerview onClickListener
 //        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -64,19 +64,19 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @Override
     public int getItemCount() {
-        return book_id.size();
+        return track_id.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView book_id_txt, book_title_txt, book_author_txt, public_time_txt;
+        TextView book_id_txt, book_title_txt, page_num_txt, public_time_txt;
         LinearLayout mainLayout;
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
             book_id_txt = itemView.findViewById(R.id.book_id_txt);
             book_title_txt = itemView.findViewById(R.id.book_title_txt);
-            book_author_txt = itemView.findViewById(R.id.page_num_txt);
+            page_num_txt = itemView.findViewById(R.id.page_num_txt);
             public_time_txt = itemView.findViewById(R.id.public_time_txt);
 //            mainLayout = itemView.findViewById(R.id.mainLayout);
 //            //Animate Recyclerview

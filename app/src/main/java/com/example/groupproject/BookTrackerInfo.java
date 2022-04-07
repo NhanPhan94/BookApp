@@ -1,10 +1,5 @@
 package com.example.groupproject;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -12,27 +7,30 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 import entities.UserProfile;
 
-public class ReadingTracker extends AppCompatActivity {
+public class BookTrackerInfo extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ImageView empty_imageview;
     TextView no_data;
 
     DBHelper DB;
-    ArrayList<String> book_id, book_title, book_author, publish_year;
-    CustomAdapter customAdapter;
+    ArrayList<String> tracker_id, book_name, page_num, publish_date;
+    CustomAdapterTracker customAdapter;
     UserProfile userprofile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reading_tracker);
+        setContentView(R.layout.activity_book_tracker_info);
 
         recyclerView = findViewById(R.id.recyclerView1);
 
@@ -40,19 +38,19 @@ public class ReadingTracker extends AppCompatActivity {
         no_data = findViewById(R.id.no_data);
 
 
-        DB = new DBHelper(ReadingTracker.this);
-        book_id = new ArrayList<>();
-        book_title = new ArrayList<>();
-        book_author = new ArrayList<>();
-        publish_year = new ArrayList<>();
+        DB = new DBHelper(BookTrackerInfo.this);
+        tracker_id = new ArrayList<>();
+        book_name = new ArrayList<>();
+        page_num = new ArrayList<>();
+        publish_date = new ArrayList<>();
         loadData();
 
         storeDataInArrays();
 
-        customAdapter = new CustomAdapter(ReadingTracker.this,this, book_id, book_title, book_author,
-                publish_year);
+        customAdapter = new CustomAdapterTracker(BookTrackerInfo.this,this, tracker_id, book_name, page_num,
+                publish_date);
         recyclerView.setAdapter(customAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(ReadingTracker.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(BookTrackerInfo.this));
 
     }
 
@@ -66,16 +64,16 @@ public class ReadingTracker extends AppCompatActivity {
 
     void storeDataInArrays(){
 
-        Cursor cursor = DB.readOwnerData(userprofile.getUserId());
+        Cursor cursor = DB.readTrackerData(userprofile.getUserId());
         if(cursor.getCount() == 0){
             empty_imageview.setVisibility(View.VISIBLE);
             no_data.setVisibility(View.VISIBLE);
         }else{
             while (cursor.moveToNext()){
-                book_id.add(cursor.getString(0));
-                book_title.add(cursor.getString(1));
-                book_author.add(cursor.getString(2));
-                publish_year.add(cursor.getString(12));
+                tracker_id.add(cursor.getString(0));
+                book_name.add(cursor.getString(1));
+                page_num.add(cursor.getString(2));
+                publish_date.add(cursor.getString(3));
             }
             empty_imageview.setVisibility(View.GONE);
             no_data.setVisibility(View.GONE);

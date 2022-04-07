@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupProject">
         <activity
+            android:name=".TrackerOptional"
+            android:exported="false" />
+        <activity
+            android:name=".TrackBook"
+            android:exported="false" />
+        <activity
             android:name=".Register"
             android:exported="false" />
         <activity
@@ -19,7 +25,7 @@
             android:name=".Messaging"
             android:exported="false" />
         <activity
-            android:name=".CustomAdapter"
+            android:name=".BookTrackerInfo"
             android:exported="false" />
         <activity
             android:name=".ReadingTracker"

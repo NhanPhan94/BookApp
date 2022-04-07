@@ -22,15 +22,24 @@
         <entry key="..\:/Douglas_College/Android_3175/Remote/BookApp/app/src/main/res/layout/activity_list_books.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_adding_book.xml" value="0.3425925925925926" />
         <entry key="app/src/main/res/layout/activity_book_info.xml" value="0.30364583333333334" />
+        <entry key="app/src/main/res/layout/activity_book_tracker_info.xml" value="0.2755208333333333" />
+        <entry key="app/src/main/res/layout/activity_borrow_book.xml" value="0.22864583333333333" />
+        <entry key="app/src/main/res/layout/activity_custom_adapter.xml" value="0.2755208333333333" />
+        <entry key="app/src/main/res/layout/activity_custom_adapter_tracker.xml" value="0.22864583333333333" />
         <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.4244791666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.4244791666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.39351851851851855" />
+        <entry key="app/src/main/res/layout/activity_reading_tracker.xml" value="0.2921875" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.40989583333333335" />
         <entry key="app/src/main/res/layout/activity_search_book.xml" value="0.4244791666666667" />
+        <entry key="app/src/main/res/layout/activity_track_book.xml" value="0.44114583333333335" />
+        <entry key="app/src/main/res/layout/activity_tracker_optional.xml" value="0.26145833333333335" />
         <entry key="app/src/main/res/layout/activity_update_book.xml" value="0.4244791666666667" />
         <entry key="app/src/main/res/layout/activity_view_profile.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/my_row.xml" value="0.2921875" />
+        <entry key="app/src/main/res/layout/my_row_tracker.xml" value="0.2755208333333333" />
       </map>
     </option>
   </component>

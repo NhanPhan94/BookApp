@@ -82,4 +82,12 @@
     <string name="usernamemsgtxtfield">To: </string>
     <string name="sendMsgtxthint">Type message ...</string>
     <string name="btnmsgcheck">Messaging</string>
+    <string name="txtBooktracker">Tracking Book</string>
+    <string name="txtYourBookName">Your book name</string>
+    <string name="txtPageNum">Page Number</string>
+    <string name="btnSubmit">Submit</string>
+    <string name="btnCancelSub">Cancel</string>
+    <string name="btnViewOweBook">View your book</string>
+    <string name="btnViewBooktracker">View Book Tracker</string>
+    <string name="btnAddBookTracer">Add Book Tracker</string>
 </resources>

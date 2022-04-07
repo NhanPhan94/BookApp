@@ -16,6 +16,7 @@ public class DBHelper extends SQLiteOpenHelper{
     final static String TABLE1_NAME = "Users_Information";
     final static String TABLE2_NAME = "Book_Information";
     final static String TABLE3_NAME = "Message_Information";
+    final static String TABLE4_NAME = "Tracker_Information";
     final static String T1COL1 = "Id";
     final static String T1COL2 = "Username";
     final static String T1COL3 = "Email";
@@ -40,24 +41,11 @@ public class DBHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
     }
 
-
     @Override
     public void onCreate(SQLiteDatabase MyDatabase) {
         String query1 = "CREATE TABLE " + TABLE1_NAME + "(" + T1COL1 + " Integer PRIMARY KEY,"+
                 T1COL2 + " Text, " + T1COL3 + " Text, " + T1COL4 + " Text, " +
                 T1COL5 + " Text, " + T1COL6 + " Text, " + T1COL7 + " Text);";
-
-
-
-//        String query2 ="CREATE TABLE " +
-//                TABLE2_NAME +
-//                "(" + T2COL1 + " Integer PRIMARY KEY,"+
-//                T2COL2 + " Text, " +
-//                T2COL3 + " Text, " +
-//                T2COL4 + " Text, " +
-//                T2COL5 + " Integer, " +
-//                "FOREIGN KEY(" + T1COL1 + ") REFERENCES " +TABLE1_NAME+"("+T1COL1 + ")"+
-//                ");";
 
         MyDatabase.execSQL(query1);
 
@@ -70,6 +58,11 @@ public class DBHelper extends SQLiteOpenHelper{
                 " Id Integer," +
                 " FOREIGN KEY(Id) REFERENCES Users_Information(Id))");
 
+        MyDatabase.execSQL("CREATE TABLE Tracker_Information(tracerID Integer PRIMARY KEY, bookName Text, " +
+                "pageNum Integer, dateTracked Text," +
+                " Id Integer," +
+                " FOREIGN KEY(Id) REFERENCES Users_Information(Id))");
+
     }
 
     @Override
@@ -77,9 +70,39 @@ public class DBHelper extends SQLiteOpenHelper{
         MyDatabase.execSQL("DROP TABLE " + TABLE1_NAME);
         MyDatabase.execSQL("DROP TABLE " + TABLE2_NAME);
         MyDatabase.execSQL("DROP TABLE " + TABLE3_NAME);
+        MyDatabase.execSQL("DROP TABLE " + TABLE4_NAME);
         onCreate(MyDatabase);
     }
+    public Boolean insertTrackData(String bookName, int pageNum, String dateTracked, int id){
+        SQLiteDatabase MyDatabase = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("bookName",bookName);
+        values.put("pageNum",pageNum);
+        values.put("dateTracked",dateTracked);
+        values.put("Id",id);
 
+
+        long result = MyDatabase.insert(TABLE4_NAME,null, values);
+
+        if(result==-1){
+            return false;
+        }
+        else{
+
+            return true;
+        }
+
+    }
+    Cursor readTrackerData(int id){
+        String query = "SELECT * FROM " + TABLE4_NAME + " WHERE id = ?";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, new String[]{String.valueOf(id)});
+        }
+        return cursor;
+    }
     public Boolean insertData(UserProfile userProfile) {
         SQLiteDatabase MyDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
