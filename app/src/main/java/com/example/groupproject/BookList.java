@@ -75,7 +75,10 @@ public class BookList extends AppCompatActivity implements ImageAdapter.ItemClic
         else{
             Toast.makeText(BookList.this,
                     "nothing to display", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(BookList.this, Home.class));
+            Intent btnAddBookIntent = new Intent(BookList.this, Home.class);
+            btnAddBookIntent.putExtra("userprofile",userprofile);
+
+
         }
         imageID = new Integer[bookImages.length];
 
