@@ -15,6 +15,8 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        setTitle("Welcome");
+
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
