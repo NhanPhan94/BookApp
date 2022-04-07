@@ -3,7 +3,7 @@
     <string name="welcome">Welcome to Book App</string>
     <string name="txtRegister">Get early access</string>
     <string name="txtLaunch">As soon as we launch we will let you know</string>
-    <string name="hintName">First Name and Last Name</string>
+    <string name="hintName">Enter your username</string>
     <string name="hintUsername">Username</string>
     <string name="hintEmail">Your email</string>
     <string name="hintAddess">Your Postal code</string>

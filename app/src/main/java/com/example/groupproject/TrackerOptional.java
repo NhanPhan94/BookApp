@@ -10,7 +10,7 @@ import android.widget.Button;
 import entities.UserProfile;
 
 public class TrackerOptional extends AppCompatActivity {
-    Button btnViewYourBook, btnViewYourTracker, btnAddTracker;
+    Button btnViewYourBook, btnViewYourTracker, btnAddTracker, btnPrevious;
     private UserProfile userprofile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,16 @@ public class TrackerOptional extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TrackerOptional.this, BookTrackerInfo.class);
+                intent.putExtra("userprofile", userprofile);
+                startActivity(intent);
+            }
+        });
+
+        btnPrevious = findViewById(R.id.btnHomeprevious);
+        btnPrevious.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrackerOptional.this, Home.class);
                 intent.putExtra("userprofile", userprofile);
                 startActivity(intent);
             }
